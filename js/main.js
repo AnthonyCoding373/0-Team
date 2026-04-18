@@ -178,6 +178,7 @@ class App {
 
   //   }
   // }
+  // test
 
   _rendorMapMarkers(dc) {
     const popUpObject = L.popup({
