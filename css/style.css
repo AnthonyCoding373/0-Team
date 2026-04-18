@@ -245,3 +245,119 @@ sort-by--test
 sort-by--list
 warning-non-severe
 icon--none-severe */
+
+/* DASHBOARD INFORMATION */
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.healthy-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  color: green;
+}
+
+.status-text {
+  font-size: 2rem;
+}
+
+.SKU-text {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.network-text {
+  font-size: 2.4rem;
+  color: #555;
+}
+
+.dc-inf-container {
+  padding: 0.8rem 0 0 1.8rem;
+
+  gap: 0;
+  column-gap: 1.8rem;
+}
+
+.dc {
+  border-radius: 11px;
+  background-color: #eee;
+  padding: 1.8rem 1.8rem;
+
+  transition: all 0.2s;
+}
+
+.dc:hover {
+  transform: translateY(-10%);
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.inf-text {
+  font-size: 2rem;
+  /* display: inline-block; */
+}
+
+.dc-name {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  margin-top: 0.8rem;
+}
+
+.dc-risk {
+  background-color: rgba(255, 0, 0, 0.2);
+  /* border: 3px solid rgba(255, 0, 0, 0.6); */
+}
+
+.item {
+  background-color: #fafafa;
+  padding: 0 0.2rem 0.8rem 1.2rem;
+  border-radius: 11px;
+}
+
+.dc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.network-text {
+  margin-bottom: 1.8rem;
+}
+
+.risk {
+  color: red;
+}
+
+/* item-header
+SKU-text
+item-status
+healthy-icon
+status-text
+dc-inf-container
+dc
+dc-header
+dc-name
+network-val
+network-text
+information
+qty
+inf-text
+cost
+risk */
