@@ -53,22 +53,26 @@ class dcInf {
     console.log(this.recommended_action, this.risk);
 
     if (this.recommended_action === "transfer_now" && this.risk > 200) {
+      this.RiskLevel = 2;
       return 2;
     }
 
     if (
       this.recommended_action === "wait_for_inbound" &&
-      (this.risk > 0 || this.priority > 500 || this.quantity <= 0)
+      (this.risk > 0 || (this.priority > 500 && this.quantity <= 800))
     ) {
+      this.RiskLevel = 1;
       return 1;
     }
 
+    this.RiskLevel = 0;
     return 0;
   }
 
   _getHTMLContent() {
+    console.log("Called", `${this.RiskLevel > 0 ? "dc-risk" : ""}`);
     let html = `
-        <div class="dc" data-id${this.sku_id}">
+        <div class="dc ${this.RiskLevel > 0 ? "dc-risk" : ""}" data-id= "${this.sku_id}">
           <div class="dc-header">
             <p class="dc-name">${locations[this.dc_id]}</p>
           </div>
@@ -98,11 +102,22 @@ class Item {
     this.#dcInfs.push(dcInf);
   }
 
+  _setRiskVisual(dc) {
+    // console.log("in", dc.RiskLevel);
+    if (Number(dc.RiskLevel) > 0) {
+      console.log(dc.sku_id);
+      const value = document.querySelector(`.dc[data-id="${dc.sku_id}"]`);
+      value.classList.add("dc-risk");
+      // console.log(value);
+    }
+  }
+
   _getRiskLevel() {
     let currentRiskLevel = 0;
 
     this.#dcInfs.forEach((dc) => {
       const val = dc._getIsAtRisk();
+      // this._setRiskVisual(dc);
       if (val > currentRiskLevel) {
         currentRiskLevel = val;
       }
@@ -111,10 +126,17 @@ class Item {
     return currentRiskLevel;
   }
 
+  _setRiskVisuals() {
+    this.#dcInfs.forEach((dc) => {
+      // const val = dc._getIsAtRisk();
+      this._setRiskVisual(dc);
+    });
+  }
+
   _getRiskText() {
     const result = this._getRiskLevel();
-
-    console.log("risk", result);
+    this.RiskLevel = result;
+    // console.log("risk", result);
 
     if (result === 0) {
       return `
@@ -124,11 +146,18 @@ class Item {
       ></ion-icon>
       <h5 class="status-text">No action needed</h5>
       `;
-    } else if (result === 0) {
+    } else if (result === 1) {
+      // return `
+      // <ion-icon
+      //   class="icon healthy-icon"
+      //   name="checkbox-outline"
+      // ></ion-icon>
+      // <h5 class="status-text">No action needed</h5>
+      // `;
       return `                       
         <ion-icon
           name="alert-circle-outline"
-          class="icon icon--medium"
+          class="icon warning-icon--"
         ></ion-icon>
         <h5 class="status-text">Warning</h5>
       `;
@@ -146,7 +175,8 @@ class Item {
   _getDCString() {
     let html = "";
 
-    this.#dcInfs.forEach((dc) => {
+    this.#dcInfs.forEach((dc, i) => {
+      if (i > 2) return;
       // console.log(dc);
       // console.log(dc._getHTMLContent());
       html += dc._getHTMLContent();
@@ -244,7 +274,7 @@ class DC {
 
   _setUpButton() {
     this.button = document.querySelector(`#${this.id}`);
-    console.log(this.button);
+    // console.log(this.button);
     this._setButtonText();
   }
 }
@@ -292,6 +322,46 @@ class App {
     return HTML;
   }
 
+  _reorderData(type) {
+    const dcInfContainer = document.querySelector(".item-section");
+    if (type == 0) {
+      this.#items.forEach((it) => it._create());
+    }
+
+    if (type == 1) {
+      const result = this.#items.toSorted((a, b) => {
+        if (a.RiskLevel == 1) {
+          return 100;
+        } else if (b.RiskLevel == 1) {
+          return -100;
+        }
+
+        if (a.RiskLevel < b.RiskLevel) return -1;
+        if (a.RiskLevel > b.RiskLevel) return 1;
+        return 0;
+      });
+
+      result.forEach((it) => {
+        console.log("BA");
+        console.log(it.RiskLevel);
+        it._create();
+      });
+    }
+
+    if (type == 2) {
+      dcInfContainer.innerHTML = "";
+
+      const result = this.#items.toSorted((a, b) => {
+        console.log(a.RiskLevel);
+        if (a.RiskLevel < b.RiskLevel) return -1;
+        if (a.RiskLevel > b.RiskLevel) return 1;
+        return 0;
+      });
+
+      result.forEach((it) => it._create());
+    }
+  }
+
   async _readData() {
     try {
       const response = await fetch(
@@ -303,7 +373,7 @@ class App {
       }
 
       const data = await response.json();
-      console.log("hello");
+      // console.log("hello");
       console.log(data);
 
       data.inventory.forEach((d) => {
@@ -319,12 +389,12 @@ class App {
         locations.forEach((loc, i) => {
           if (i >= maxSize) return;
 
-          console.log(loc);
-          console.log(loc.decision_support);
+          // console.log(loc);
+          // console.log(loc.decision_support);
           const expected_support_summary =
             loc.decision_support.estimated_transfer_cost;
-          console.log(expected_support_summary);
-          console.log(loc.decision_support.recommendation);
+          // console.log(expected_support_summary);
+          // console.log(loc.decision_support.recommendation);
 
           const newDCLoc = new dcInf(
             skuID,
@@ -338,7 +408,7 @@ class App {
           );
 
           newItem._pushDC(newDCLoc);
-          console.log(newDCLoc);
+          // console.log(newDCLoc);
         });
 
         this.#items.push(newItem);
@@ -347,12 +417,16 @@ class App {
       console.log(err);
     }
     this.#items.forEach((it) => it._create());
+
+    setTimeout(this._reorderData.bind(this, 1), 5000);
   }
 
   _rendorItems() {
     this.#items.forEach((item) => {
       dcContainer.insertAdjacentHTML("afterbegin", item._getHTMLContent());
     });
+
+    _setRiskVisuals();
   }
 
   // async function startDashboard() {
@@ -512,7 +586,7 @@ class App {
 
     this._handleSidebarSelection(dashboardID);
 
-    console.log(dashboardID, this.#DCs);
+    // console.log(dashboardID, this.#DCs);
 
     this._movetoPopup();
   }

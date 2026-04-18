@@ -267,6 +267,12 @@ icon--none-severe */
   color: green;
 }
 
+.warning-icon-- {
+  width: 3.6rem;
+  height: 3.6rem;
+  color: rgb(255, 140, 0);
+}
+
 .status-text {
   font-size: 2rem;
 }
