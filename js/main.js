@@ -11,12 +11,90 @@ const buttonContainer = document.querySelector(".dashboard--info-container");
 //   }
 // });
 
+// <div class="item" data-sku="${this.sku_id}">
+//         <div class="item-header">
+//           <h3 class="SKU-text">SKU: ${this.sku_id}</h3>
+//           <div class="item-status">
+//             <ion-icon
+//               class="icon ${risk > 0 ? "warning-icon-" : "healthy-icon"} "
+//               name="checkbox-outline"
+//             ></ion-icon>
+//             <h5 class="status-text">${risk > 0 ? "Action needed" : "No action needed"}</h5>
+//           </div>
+//         </div>
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 class dcInf {
-  // constructor(id, quantity, cost, risk)
+  constructor(sku_id, dc_id, quantity, cost, risk, total_value) {
+    this.sku_id = sku_id;
+    this.dc_id = dc_id;
+    this.quantity = quantity;
+    this.cost = cost;
+    this.risk = risk;
+    this.total_value = total_value;
+  }
+
+  _getHTMLContent() {
+    let html = `
+        <div class="dc" data-id="${this.dc_id} data-sku${this.sku_id}">
+          <div class="dc-header">
+            <p class="dc-name">${this.dc_id}</p>
+          </div>
+          <div class="information">
+            <p class="qty inf-text">Qty: ${this.quantity}</p>
+            <p class="cost inf-text">Cost: $${this.cost}</p>
+            <p class="total-value inf-text">Value: $${numberWithCommas(this.total_value)}</p>
+            <p class="risk inf-text">Risk: $${this.risk}</p>
+          </div>
+        </div>
+    `;
+    return html;
+  }
 }
 
 class item {
-  // constructor(sku_id, networkValue, )
+  #dcInfItems;
+  constructor(sku_id, networkValue, dcInfItems) {
+    this.sku_id = sku_id;
+    this.networkValue = networkValue;
+    this.dcInfItems = dcInfItems;
+  }
+
+  _getHTMLContent() {
+    let html = `
+      <div class="item" data-sku="134">
+        <div class="item-header">
+          <h3 class="SKU-text">SKU: A-61012</h3>
+          <div class="item-status">
+            <ion-icon
+              class="icon healthy-icon"
+              name="checkbox-outline"
+            ></ion-icon>
+            <h5 class="status-text">No action needed</h5>
+          </div>
+        </div>
+        <p class="network-text">Total Network Value: $416,215.77</p>
+        <div class="dc-container">
+          <div class="dc-inf-container grid grid--col-3">
+          </div>
+        </div>
+      </div>
+    `;
+
+    return html;
+  }
+
+  _createItem(dcINf) {
+    const itemSKU = document.querySelector(`.item[data-sku=${this.sku_id}]`);
+    this.itemSKU = itemSKU;
+
+    this.items = itemSKU.querySelector("dc-inf-container");
+
+    this.items.insertAdjacentHTML("afterbegin", dcINf._getHTMLContent());
+  }
 }
 
 class DC {
@@ -64,6 +142,7 @@ class App {
     this.currentDC;
 
     this._getPosition();
+    this._readData();
     // this._rendorMapMarkers();
     // Event Listeners
     buttonContainer.addEventListener("click", this._handleDC.bind(this));
@@ -93,6 +172,13 @@ class App {
 
     return HTML;
   }
+
+  // _readData() {
+  //   try {
+
+  //   }
+  // }
+  // test
 
   _rendorMapMarkers(dc) {
     const popUpObject = L.popup({
