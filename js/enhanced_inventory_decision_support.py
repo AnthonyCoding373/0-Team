@@ -99,12 +99,38 @@ def build_purchase_order_map():
         if not sku:
             continue
 
+        qty = to_num(row.get(qty_col, 0)) if qty_col else 0
+        eta = to_date(row.get(eta_col)) if eta_col else pd.NaT
+        status = clean_lower(row.get(status_col, "")) if status_col else ""
+        dc = normalize(row.get(dc_col, "")) if dc_col else ""
+
+        # Drop useless placeholder rows
+        if qty == 0 and pd.isna(eta) and not status and not dc:
+            continue
+
         po_map[sku].append({
-            "qty": to_num(row.get(qty_col, 0)) if qty_col else 0,
-            "eta": to_date(row.get(eta_col)) if eta_col else pd.NaT,
-            "status": clean_lower(row.get(status_col, "")) if status_col else "",
-            "dc": normalize(row.get(dc_col, "")) if dc_col else "",
+            "qty": qty,
+            "eta": eta,
+            "status": status,
+            "dc": dc,
         })
+
+    # Deduplicate and keep only one meaningful record per unique inbound event
+    for sku, entries in list(po_map.items()):
+        seen = set()
+        deduped = []
+        for e in entries:
+            key = (
+                round(float(e["qty"]), 2),
+                None if pd.isna(e["eta"]) else e["eta"].strftime("%Y-%m-%d"),
+                e["status"],
+                e["dc"],
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            deduped.append(e)
+        po_map[sku] = deduped[:1]  # keep only the most relevant one
 
     return po_map
 
@@ -216,15 +242,41 @@ def build_shipment_delay_map():
         )
         fda_hold_flag = "fda" in status_text or "fda" in hold_text
 
+        eta = to_date(row.get(eta_col)) if eta_col else pd.NaT
+        dc = normalize(row.get(dc_col, "")) if dc_col else ""
+
+        # Drop useless placeholder rows
+        if pd.isna(eta) and not status_text and not dc and not delay_flag and not fda_hold_flag:
+            continue
+
         shipment_map[sku].append({
-            "eta": to_date(row.get(eta_col)) if eta_col else pd.NaT,
+            "eta": eta,
             "status": status_text,
             "delay_flag": delay_flag,
             "fda_hold": fda_hold_flag,
-            "dc": normalize(row.get(dc_col, "")) if dc_col else "",
+            "dc": dc,
         })
 
+    # Deduplicate and keep only one meaningful record per unique inbound event
+    for sku, entries in list(shipment_map.items()):
+        seen = set()
+        deduped = []
+        for e in entries:
+            key = (
+                None if pd.isna(e["eta"]) else e["eta"].strftime("%Y-%m-%d"),
+                e["status"],
+                bool(e["delay_flag"]),
+                bool(e["fda_hold"]),
+                e["dc"],
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            deduped.append(e)
+        shipment_map[sku] = deduped[:1]  # keep only the most relevant one
+
     return shipment_map
+
 
 
 def build_transfer_request_map():
@@ -332,13 +384,41 @@ def build_transfer_request_map():
         if not sku:
             continue
 
+        qty = to_num(row.get(qty_col, 0)) if qty_col else 0
+        from_dc = normalize(row.get(from_dc_col, "")) if from_dc_col else ""
+        to_dc = normalize(row.get(to_dc_col, "")) if to_dc_col else ""
+        status = clean_lower(row.get(status_col, "")) if status_col else ""
+        eta = to_date(row.get(eta_col)) if eta_col else pd.NaT
+
+        # Drop useless placeholder rows
+        if qty == 0 and pd.isna(eta) and not from_dc and not to_dc and not status:
+            continue
+
         transfer_map[sku].append({
-            "qty": to_num(row.get(qty_col, 0)) if qty_col else 0,
-            "from_dc": normalize(row.get(from_dc_col, "")) if from_dc_col else "",
-            "to_dc": normalize(row.get(to_dc_col, "")) if to_dc_col else "",
-            "status": clean_lower(row.get(status_col, "")) if status_col else "",
-            "eta": to_date(row.get(eta_col)) if eta_col else pd.NaT,
+            "qty": qty,
+            "from_dc": from_dc,
+            "to_dc": to_dc,
+            "status": status,
+            "eta": eta,
         })
+
+    # Deduplicate and keep only one meaningful record per unique transfer event
+    for sku, entries in list(transfer_map.items()):
+        seen = set()
+        deduped = []
+        for e in entries:
+            key = (
+                round(float(e["qty"]), 2),
+                e["from_dc"],
+                e["to_dc"],
+                e["status"],
+                None if pd.isna(e["eta"]) else e["eta"].strftime("%Y-%m-%d"),
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            deduped.append(e)
+        transfer_map[sku] = deduped[:1]  # keep only the most relevant one
 
     return transfer_map
 
@@ -595,11 +675,6 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
         location_qty = to_num(location.get("qty", 0))
         location_total_value = to_num(location.get("total_value", 0))
 
-        # Location-specific transfer need: only consider negative or low stock at that location
-        transfer_qty_needed = max(0, abs(location_qty)) if location_qty < 0 else max(0, min(0, location_qty))
-    else:
-        transfer_qty_needed = max(0, abs(min_loc_qty))
-
     # inbound timing
     po_eta = nearest_eta(po_entries)
     ship_eta = nearest_eta(shipment_entries)
@@ -610,10 +685,16 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
     delay_risk = any(e.get("delay_flag") for e in shipment_entries)
     fda_hold = any(e.get("fda_hold") for e in shipment_entries)
 
-    # transfer cost heuristic: use transfer qty and a simple per-unit freight assumption
-    # if you have lane freight costs, plug them in here
+    # transfer cost heuristic: use location qty if available, otherwise worst-case negative imbalance
     freight_cost_per_unit = 1.25
-    estimated_transfer_cost = round(transfer_qty_needed * freight_cost_per_unit, 2)
+
+    if location_qty is not None:
+        # If this location is negative or below a low-stock threshold, it may need transfer.
+        shortage_qty = abs(location_qty) if location_qty < 0 else max(0, 25 - location_qty)
+    else:
+        shortage_qty = max(0, abs(min_loc_qty))
+
+    estimated_transfer_cost = round(shortage_qty * freight_cost_per_unit, 2)
 
     # penalty exposure heuristic from chargeback history
     chargeback_cost = round(sum(r["amount"] for r in relevant_chargebacks), 2)
@@ -649,22 +730,43 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
             wait_cost *= 0.9
         else:
             wait_cost *= 1.15
+    else:
+        # If there is no inbound ETA, waiting is riskier
+        wait_cost *= 1.2
 
     wait_cost = round(wait_cost, 2)
 
-    if estimated_transfer_cost < wait_cost:
+    # Stronger recommendation logic:
+    # - transfer if this location is short/negative and transfer is cheaper than waiting,
+    #   or if there is no inbound soon.
+    # - wait only if inbound is soon and the location is not short.
+    inbound_soon = pd.notna(next_inbound_eta) and max((next_inbound_eta - pd.Timestamp.now()).days, 0) <= 7
+    location_short = (location_qty is not None and location_qty <= 0) or (location_qty is not None and location_qty < 25)
+    serious_imbalance = min_loc_qty < 0 or imbalance_score >= 1000
+
+    if location_short and (not inbound_soon or estimated_transfer_cost <= wait_cost or serious_imbalance):
+        recommendation = "transfer_now"
+    elif wait_cost > estimated_transfer_cost * 1.25 and not inbound_soon:
         recommendation = "transfer_now"
     else:
         recommendation = "wait_for_inbound"
 
-    priority_score = round((wait_cost - estimated_transfer_cost) + (imbalance_score * 0.01), 2)
+    # Make priority score reflect the urgency of the local location, not only SKU-wide totals
+    location_pressure = 0
+    if location_qty is not None:
+        if location_qty < 0:
+            location_pressure = abs(location_qty) * 0.1
+        elif location_qty < 25:
+            location_pressure = (25 - location_qty) * 0.05
+
+    priority_score = round((wait_cost - estimated_transfer_cost) + (imbalance_score * 0.01) + location_pressure, 2)
 
     return {
         "sku": sku,
         "location": None if location is None else normalize(location.get("location")),
         "location_qty": round(location_qty, 2) if location_qty is not None else None,
         "location_total_value": round(location_total_value, 2) if location_total_value is not None else None,
-        "imbalance_detected": imbalance_score > 0 or min_loc_qty < 0,
+        "imbalance_detected": imbalance_score > 0 or min_loc_qty < 0 or location_short,
         "imbalance_score": round(imbalance_score, 2),
         "estimated_transfer_cost": estimated_transfer_cost,
         "expected_penalty_cost_if_wait": wait_cost,
@@ -719,7 +821,6 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
             for e in transfer_entries
         ],
     }
-
 
 def top_related_cause_codes(relevant_chargebacks):
     summary = defaultdict(lambda: {"cost": 0.0, "count": 0})
