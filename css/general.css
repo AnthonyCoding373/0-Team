@@ -1,0 +1,75 @@
+#888
+  /* #767676
+  (lightest grey allowed on #fff)
+  #6f6f6f
+  (lightest grey allowed on #fdf2e9)
+  #555
+  #333 */
+
+/* 
+Accent: #ed0020
+
+*/
+  
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+
+  overflow-x: hidden;
+}
+
+.container {
+  /* 1140px */
+  max-width: 134rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.main-nav {
+  font-size: 1.8rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  list-style: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  color: #555;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid--col-2 {
+  grid-template-columns: 50fr 50fr;
+}
