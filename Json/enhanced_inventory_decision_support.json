@@ -1,0 +1,5252 @@
+{
+  "generated_from": "enhanced_per_sku_inventory_with_trends.json",
+  "inventory": [
+    {
+      "sku": "A-61012",
+      "total_network_qty": 126625,
+      "total_network_value": 1684876.06,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 92181,
+          "unit_cost": 12.189546875,
+          "total_value": 1253734.05,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 34764,
+          "unit_cost": 12.39309375,
+          "total_value": 427142.33,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": -320,
+          "unit_cost": 12.499,
+          "total_value": 3999.68,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 650.6214713216957
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 4788.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 4788.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "A-61012",
+          "location": "1",
+          "location_qty": 92181.0,
+          "location_total_value": 1253734.05,
+          "imbalance_detected": true,
+          "imbalance_score": 92501,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 925.01,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61012",
+          "location": "2",
+          "location_qty": 34764.0,
+          "location_total_value": 427142.33,
+          "imbalance_detected": true,
+          "imbalance_score": 92501,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 925.01,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61012",
+          "location": "3",
+          "location_qty": -320.0,
+          "location_total_value": 3999.68,
+          "imbalance_detected": true,
+          "imbalance_score": 92501,
+          "estimated_transfer_cost": 400.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 525.01,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 400.0,
+            "wait_cost": 0.0,
+            "difference": -400.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "A-61012",
+        "location": "1",
+        "location_qty": 92181.0,
+        "location_total_value": 1253734.05,
+        "imbalance_detected": true,
+        "imbalance_score": 92501,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 925.01,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "A-61220",
+      "total_network_qty": 116473,
+      "total_network_value": 516215.77,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 41417,
+          "unit_cost": 3.4274444444444443,
+          "total_value": 237480.25,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 873,
+          "unit_cost": 3.5454999999999997,
+          "total_value": 6221.18,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 74183,
+          "unit_cost": 3.6055208333333333,
+          "total_value": 272514.34,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 663.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 663.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "A-61220",
+          "location": "1",
+          "location_qty": 41417.0,
+          "location_total_value": 237480.25,
+          "imbalance_detected": true,
+          "imbalance_score": 73310,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 733.1,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61220",
+          "location": "2",
+          "location_qty": 873.0,
+          "location_total_value": 6221.18,
+          "imbalance_detected": true,
+          "imbalance_score": 73310,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 733.1,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61220",
+          "location": "3",
+          "location_qty": 74183.0,
+          "location_total_value": 272514.34,
+          "imbalance_detected": true,
+          "imbalance_score": 73310,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 733.1,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "A-61220",
+        "location": "1",
+        "location_qty": 41417.0,
+        "location_total_value": 237480.25,
+        "imbalance_detected": true,
+        "imbalance_score": 73310,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 733.1,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "A-61243",
+      "total_network_qty": 161446,
+      "total_network_value": 1263344.99,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 116965,
+          "unit_cost": 7.802826923076923,
+          "total_value": 909269.33,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 1677,
+          "unit_cost": 7.8224,
+          "total_value": 13265.8,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 8200,
+          "unit_cost": 7.835307692307692,
+          "total_value": 65215.68,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "IF",
+          "qty": 34604,
+          "unit_cost": 7.977142857142857,
+          "total_value": 275594.18,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 2785.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 2785.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "A-61243",
+          "location": "1",
+          "location_qty": 116965.0,
+          "location_total_value": 909269.33,
+          "imbalance_detected": true,
+          "imbalance_score": 115288,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1152.88,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61243",
+          "location": "2",
+          "location_qty": 1677.0,
+          "location_total_value": 13265.8,
+          "imbalance_detected": true,
+          "imbalance_score": 115288,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1152.88,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61243",
+          "location": "3",
+          "location_qty": 8200.0,
+          "location_total_value": 65215.68,
+          "imbalance_detected": true,
+          "imbalance_score": 115288,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1152.88,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61243",
+          "location": "IF",
+          "location_qty": 34604.0,
+          "location_total_value": 275594.18,
+          "imbalance_detected": true,
+          "imbalance_score": 115288,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1152.88,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "A-61243",
+        "location": "1",
+        "location_qty": 116965.0,
+        "location_total_value": 909269.33,
+        "imbalance_detected": true,
+        "imbalance_score": 115288,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 1152.88,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "A-61260",
+      "total_network_qty": 34418,
+      "total_network_value": 361207.48,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 11362,
+          "unit_cost": 10.730428571428572,
+          "total_value": 120649.61,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 19080,
+          "unit_cost": 10.119684210526316,
+          "total_value": 199097.39,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 3976,
+          "unit_cost": 10.416166666666667,
+          "total_value": 41460.479999999996,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 350.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 350.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "A-61260",
+          "location": "1",
+          "location_qty": 11362.0,
+          "location_total_value": 120649.61,
+          "imbalance_detected": true,
+          "imbalance_score": 15104,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 151.04,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61260",
+          "location": "2",
+          "location_qty": 19080.0,
+          "location_total_value": 199097.39,
+          "imbalance_detected": true,
+          "imbalance_score": 15104,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 151.04,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61260",
+          "location": "3",
+          "location_qty": 3976.0,
+          "location_total_value": 41460.48,
+          "imbalance_detected": true,
+          "imbalance_score": 15104,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 151.04,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "A-61260",
+        "location": "1",
+        "location_qty": 11362.0,
+        "location_total_value": 120649.61,
+        "imbalance_detected": true,
+        "imbalance_score": 15104,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 151.04,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "A-61260N",
+      "total_network_qty": 244514,
+      "total_network_value": 2517428.96,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 113285,
+          "unit_cost": 9.760464788732396,
+          "total_value": 1115281.67,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 11950,
+          "unit_cost": 9.797086956521738,
+          "total_value": 117999.98,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "IF",
+          "qty": 119279,
+          "unit_cost": 10.920568181818181,
+          "total_value": 1284147.31,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 5439.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 5439.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "A-61260N",
+          "location": "1",
+          "location_qty": 113285.0,
+          "location_total_value": 1115281.67,
+          "imbalance_detected": true,
+          "imbalance_score": 107329,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1073.29,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61260N",
+          "location": "3",
+          "location_qty": 11950.0,
+          "location_total_value": 117999.98,
+          "imbalance_detected": true,
+          "imbalance_score": 107329,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1073.29,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61260N",
+          "location": "IF",
+          "location_qty": 119279.0,
+          "location_total_value": 1284147.31,
+          "imbalance_detected": true,
+          "imbalance_score": 107329,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1073.29,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "A-61260N",
+        "location": "1",
+        "location_qty": 113285.0,
+        "location_total_value": 1115281.67,
+        "imbalance_detected": true,
+        "imbalance_score": 107329,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 1073.29,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "A-61280",
+      "total_network_qty": 108940,
+      "total_network_value": 1339304.63,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 3193,
+          "unit_cost": 11.616,
+          "total_value": 38717.72,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "U",
+          "qty": 105747,
+          "unit_cost": 12.35727027027027,
+          "total_value": 1300586.91,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 0,
+        "units_transferred_out": 0,
+        "net_transfer_change": 0,
+        "trend": "flat"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "A-61280",
+          "location": "1",
+          "location_qty": 3193.0,
+          "location_total_value": 38717.72,
+          "imbalance_detected": true,
+          "imbalance_score": 102554,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1025.54,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "A-61280",
+          "location": "U",
+          "location_qty": 105747.0,
+          "location_total_value": 1300586.91,
+          "imbalance_detected": true,
+          "imbalance_score": 102554,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 1025.54,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "A-61280",
+        "location": "1",
+        "location_qty": 3193.0,
+        "location_total_value": 38717.72,
+        "imbalance_detected": true,
+        "imbalance_score": 102554,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 1025.54,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B16BK",
+      "total_network_qty": 73501,
+      "total_network_value": 1819254.58,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 27840,
+          "unit_cost": 24.331521739130434,
+          "total_value": 684252.92,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 3272,
+          "unit_cost": 25.0069375,
+          "total_value": 84642.01000000001,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 42389,
+          "unit_cost": 24.941666666666666,
+          "total_value": 1050359.65,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 8620.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 8620.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B16BK",
+          "location": "1",
+          "location_qty": 27840.0,
+          "location_total_value": 684252.92,
+          "imbalance_detected": true,
+          "imbalance_score": 39117,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 391.17,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B16BK",
+          "location": "2",
+          "location_qty": 3272.0,
+          "location_total_value": 84642.01,
+          "imbalance_detected": true,
+          "imbalance_score": 39117,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 391.17,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B16BK",
+          "location": "3",
+          "location_qty": 42389.0,
+          "location_total_value": 1050359.65,
+          "imbalance_detected": true,
+          "imbalance_score": 39117,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 391.17,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B16BK",
+        "location": "1",
+        "location_qty": 27840.0,
+        "location_total_value": 684252.92,
+        "imbalance_detected": true,
+        "imbalance_score": 39117,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 391.17,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B3SLJ",
+      "total_network_qty": 11946,
+      "total_network_value": 150682.95,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 10358,
+          "unit_cost": 12.574967741935485,
+          "total_value": 130097.24,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 1588,
+          "unit_cost": 12.979333333333335,
+          "total_value": 20585.71,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 3900.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 3900.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B3SLJ",
+          "location": "1",
+          "location_qty": 10358.0,
+          "location_total_value": 130097.24,
+          "imbalance_detected": true,
+          "imbalance_score": 8770,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 87.7,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B3SLJ",
+          "location": "3",
+          "location_qty": 1588.0,
+          "location_total_value": 20585.71,
+          "imbalance_detected": true,
+          "imbalance_score": 8770,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 87.7,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B3SLJ",
+        "location": "1",
+        "location_qty": 10358.0,
+        "location_total_value": 130097.24,
+        "imbalance_detected": true,
+        "imbalance_score": 8770,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 87.7,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B4BK",
+      "total_network_qty": 142250,
+      "total_network_value": 1064232.9100000001,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 74600,
+          "unit_cost": 7.538418918918919,
+          "total_value": 556711.39,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 3798,
+          "unit_cost": 7.6114999999999995,
+          "total_value": 29016.17,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 63852,
+          "unit_cost": 7.535783783783784,
+          "total_value": 478505.35,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 15920.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 15920.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B4BK",
+          "location": "1",
+          "location_qty": 74600.0,
+          "location_total_value": 556711.39,
+          "imbalance_detected": true,
+          "imbalance_score": 70802,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 708.02,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B4BK",
+          "location": "2",
+          "location_qty": 3798.0,
+          "location_total_value": 29016.17,
+          "imbalance_detected": true,
+          "imbalance_score": 70802,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 708.02,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B4BK",
+          "location": "3",
+          "location_qty": 63852.0,
+          "location_total_value": 478505.35,
+          "imbalance_detected": true,
+          "imbalance_score": 70802,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 708.02,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B4BK",
+        "location": "1",
+        "location_qty": 74600.0,
+        "location_total_value": 556711.39,
+        "imbalance_detected": true,
+        "imbalance_score": 70802,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 708.02,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "total_network_qty": 12241,
+      "total_network_value": 354204.72000000003,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 12020,
+          "unit_cost": 21.154232558139533,
+          "total_value": 254014.47,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": -599,
+          "unit_cost": 22.071,
+          "total_value": 13309.68,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 650.6214713216957
+        },
+        {
+          "location": "3",
+          "qty": 820,
+          "unit_cost": 21.827312499999998,
+          "total_value": 86880.56999999999,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 5842.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 5842.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B6SLJ",
+          "location": "1",
+          "location_qty": 12020.0,
+          "location_total_value": 254014.47,
+          "imbalance_detected": true,
+          "imbalance_score": 12619,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 126.19,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B6SLJ",
+          "location": "2",
+          "location_qty": -599.0,
+          "location_total_value": 13309.68,
+          "imbalance_detected": true,
+          "imbalance_score": 12619,
+          "estimated_transfer_cost": 748.75,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": -622.56,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 748.75,
+            "wait_cost": 0.0,
+            "difference": -748.75,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B6SLJ",
+          "location": "3",
+          "location_qty": 820.0,
+          "location_total_value": 86880.57,
+          "imbalance_detected": true,
+          "imbalance_score": 12619,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 126.19,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B6SLJ",
+        "location": "1",
+        "location_qty": 12020.0,
+        "location_total_value": 254014.47,
+        "imbalance_detected": true,
+        "imbalance_score": 12619,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 126.19,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B8BK",
+      "total_network_qty": 81349,
+      "total_network_value": 1121467.79,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 49104,
+          "unit_cost": 13.781433962264153,
+          "total_value": 675660.94,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 11379,
+          "unit_cost": 14.521270270270271,
+          "total_value": 161414.09,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "3",
+          "qty": 20866,
+          "unit_cost": 13.686571428571428,
+          "total_value": 284392.76,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 9820.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 9820.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B8BK",
+          "location": "1",
+          "location_qty": 49104.0,
+          "location_total_value": 675660.94,
+          "imbalance_detected": true,
+          "imbalance_score": 37725,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 377.25,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B8BK",
+          "location": "2",
+          "location_qty": 11379.0,
+          "location_total_value": 161414.09,
+          "imbalance_detected": true,
+          "imbalance_score": 37725,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 377.25,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B8BK",
+          "location": "3",
+          "location_qty": 20866.0,
+          "location_total_value": 284392.76,
+          "imbalance_detected": true,
+          "imbalance_score": 37725,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 377.25,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B8BK",
+        "location": "1",
+        "location_qty": 49104.0,
+        "location_total_value": 675660.94,
+        "imbalance_detected": true,
+        "imbalance_score": 37725,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 377.25,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B9SL",
+      "total_network_qty": 487675,
+      "total_network_value": 11512303.07,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 800,
+          "unit_cost": 20.563,
+          "total_value": 16450.4,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "U",
+          "qty": 486875,
+          "unit_cost": 23.40938636363636,
+          "total_value": 11495852.67,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 0,
+        "units_transferred_out": 0,
+        "net_transfer_change": 0,
+        "trend": "flat"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B9SL",
+          "location": "1",
+          "location_qty": 800.0,
+          "location_total_value": 16450.4,
+          "imbalance_detected": true,
+          "imbalance_score": 486075,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 4860.75,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "AC-B9SL",
+          "location": "U",
+          "location_qty": 486875.0,
+          "location_total_value": 11495852.67,
+          "imbalance_detected": true,
+          "imbalance_score": 486075,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 4860.75,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B9SL",
+        "location": "1",
+        "location_qty": 800.0,
+        "location_total_value": 16450.4,
+        "imbalance_detected": true,
+        "imbalance_score": 486075,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 4860.75,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "AC-B9SLE",
+      "total_network_qty": 72010,
+      "total_network_value": 1663963.71,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 72010,
+          "unit_cost": 22.834833333333332,
+          "total_value": 1663963.71,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 0,
+        "units_transferred_out": 0,
+        "net_transfer_change": 0,
+        "trend": "flat"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "AC-B9SLE",
+          "location": "1",
+          "location_qty": 72010.0,
+          "location_total_value": 1663963.71,
+          "imbalance_detected": false,
+          "imbalance_score": 0,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 0.0,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "AC-B9SLE",
+        "location": "1",
+        "location_qty": 72010.0,
+        "location_total_value": 1663963.71,
+        "imbalance_detected": false,
+        "imbalance_score": 0,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 0.0,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "F-04211",
+      "total_network_qty": -1320432,
+      "total_network_value": 382459.19999999995,
+      "locations": [
+        {
+          "location": "1",
+          "qty": -120336,
+          "unit_cost": 0.2826666666666667,
+          "total_value": 33905.549999999996,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 650.6214713216957
+        },
+        {
+          "location": "2",
+          "qty": -1032936,
+          "unit_cost": 0.29145454545454547,
+          "total_value": 300257.72,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 650.6214713216957
+        },
+        {
+          "location": "L",
+          "qty": -167160,
+          "unit_cost": 0.28783333333333333,
+          "total_value": 48295.93,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 650.6214713216957
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 4700.0,
+        "units_transferred_out": 0.0,
+        "net_transfer_change": 4700.0,
+        "trend": "increasing"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "F-04211",
+          "location": "1",
+          "location_qty": -120336.0,
+          "location_total_value": 33905.55,
+          "imbalance_detected": true,
+          "imbalance_score": 912600,
+          "estimated_transfer_cost": 150420.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": -141294.0,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              }
+            ],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 150420.0,
+            "wait_cost": 0.0,
+            "difference": -150420.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "F-04211",
+          "location": "2",
+          "location_qty": -1032936.0,
+          "location_total_value": 300257.72,
+          "imbalance_detected": true,
+          "imbalance_score": 912600,
+          "estimated_transfer_cost": 1291170.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": -1282044.0,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              }
+            ],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 1291170.0,
+            "wait_cost": 0.0,
+            "difference": -1291170.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "F-04211",
+          "location": "L",
+          "location_qty": -167160.0,
+          "location_total_value": 48295.93,
+          "imbalance_detected": true,
+          "imbalance_score": 912600,
+          "estimated_transfer_cost": 208950.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": -199824.0,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              },
+              {
+                "qty": 0,
+                "eta": null,
+                "status": "",
+                "dc": ""
+              }
+            ],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 208950.0,
+            "wait_cost": 0.0,
+            "difference": -208950.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "F-04211",
+        "location": "1",
+        "location_qty": -120336.0,
+        "location_total_value": 33905.55,
+        "imbalance_detected": true,
+        "imbalance_score": 912600,
+        "estimated_transfer_cost": 150420.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": -141294.0,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            },
+            {
+              "qty": 0,
+              "eta": null,
+              "status": "",
+              "dc": ""
+            }
+          ],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 150420.0,
+          "wait_cost": 0.0,
+          "difference": -150420.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "F-04220",
+      "total_network_qty": 55018,
+      "total_network_value": 447801.55,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 5014,
+          "unit_cost": 7.6875,
+          "total_value": 37454.19,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 43039,
+          "unit_cost": 8.231727272727273,
+          "total_value": 351792.94,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "L",
+          "qty": 6965,
+          "unit_cost": 8.300166666666668,
+          "total_value": 58554.42,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 0,
+        "units_transferred_out": 0,
+        "net_transfer_change": 0,
+        "trend": "flat"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "F-04220",
+          "location": "1",
+          "location_qty": 5014.0,
+          "location_total_value": 37454.19,
+          "imbalance_detected": true,
+          "imbalance_score": 38025,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 380.25,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "F-04220",
+          "location": "2",
+          "location_qty": 43039.0,
+          "location_total_value": 351792.94,
+          "imbalance_detected": true,
+          "imbalance_score": 38025,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 380.25,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "F-04220",
+          "location": "L",
+          "location_qty": 6965.0,
+          "location_total_value": 58554.42,
+          "imbalance_detected": true,
+          "imbalance_score": 38025,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 380.25,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "F-04220",
+        "location": "1",
+        "location_qty": 5014.0,
+        "location_total_value": 37454.19,
+        "imbalance_detected": true,
+        "imbalance_score": 38025,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 380.25,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    },
+    {
+      "sku": "T-32224",
+      "total_network_qty": 46460,
+      "total_network_value": 640361.58,
+      "locations": [
+        {
+          "location": "1",
+          "qty": 1728,
+          "unit_cost": 13.463000000000001,
+          "total_value": 23245.23,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "2",
+          "qty": 33189,
+          "unit_cost": 13.74675,
+          "total_value": 457708.56,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        },
+        {
+          "location": "L",
+          "qty": 11543,
+          "unit_cost": 13.8082,
+          "total_value": 159407.79,
+          "inbound_supply": [],
+          "penalty_risk_estimate": 0
+        }
+      ],
+      "sales_traction": {
+        "recent_units_sold": 0,
+        "prior_units_sold": 0,
+        "sales_velocity_30d": 0.0,
+        "trend": "flat",
+        "sell_out_risk": "low"
+      },
+      "internal_transfer": {
+        "units_transferred_in": 0,
+        "units_transferred_out": 0,
+        "net_transfer_change": 0,
+        "trend": "flat"
+      },
+      "decision_support_by_location": [
+        {
+          "sku": "T-32224",
+          "location": "1",
+          "location_qty": 1728.0,
+          "location_total_value": 23245.23,
+          "imbalance_detected": true,
+          "imbalance_score": 31461,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 314.61,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "T-32224",
+          "location": "2",
+          "location_qty": 33189.0,
+          "location_total_value": 457708.56,
+          "imbalance_detected": true,
+          "imbalance_score": 31461,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 314.61,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        },
+        {
+          "sku": "T-32224",
+          "location": "L",
+          "location_qty": 11543.0,
+          "location_total_value": 159407.79,
+          "imbalance_detected": true,
+          "imbalance_score": 31461,
+          "estimated_transfer_cost": 0.0,
+          "expected_penalty_cost_if_wait": 0.0,
+          "penalty_risk_estimate": 0.0,
+          "recommendation": "wait_for_inbound",
+          "priority_score": 314.61,
+          "inbound": {
+            "next_inbound_eta": null,
+            "delay_risk": false,
+            "fda_hold": false,
+            "purchase_orders": [],
+            "shipment_status": []
+          },
+          "chargeback_exposure": {
+            "total_related_chargebacks": 0,
+            "total_related_cost": 0,
+            "operational_penalty_cost": 0,
+            "planned_promotional_deduction_cost": 0,
+            "top_related_cause_codes": []
+          },
+          "tradeoff": {
+            "transfer_cost": 0.0,
+            "wait_cost": 0.0,
+            "difference": 0.0,
+            "preferred_action": "wait_for_inbound"
+          },
+          "transfer_requests": []
+        }
+      ],
+      "decision_support_summary": {
+        "sku": "T-32224",
+        "location": "1",
+        "location_qty": 1728.0,
+        "location_total_value": 23245.23,
+        "imbalance_detected": true,
+        "imbalance_score": 31461,
+        "estimated_transfer_cost": 0.0,
+        "expected_penalty_cost_if_wait": 0.0,
+        "penalty_risk_estimate": 0.0,
+        "recommendation": "wait_for_inbound",
+        "priority_score": 314.61,
+        "inbound": {
+          "next_inbound_eta": null,
+          "delay_risk": false,
+          "fda_hold": false,
+          "purchase_orders": [],
+          "shipment_status": []
+        },
+        "chargeback_exposure": {
+          "total_related_chargebacks": 0,
+          "total_related_cost": 0,
+          "operational_penalty_cost": 0,
+          "planned_promotional_deduction_cost": 0,
+          "top_related_cause_codes": []
+        },
+        "tradeoff": {
+          "transfer_cost": 0.0,
+          "wait_cost": 0.0,
+          "difference": 0.0,
+          "preferred_action": "wait_for_inbound"
+        },
+        "transfer_requests": []
+      }
+    }
+  ],
+  "chargeback_analysis": {
+    "total_chargeback_cost": 6578467.22,
+    "operational_penalty_cost": 0,
+    "planned_promotional_deduction_cost": 0,
+    "top_cause_codes": [
+      {
+        "key": "",
+        "total_cost": 6578467.22,
+        "count": 63,
+        "avg_cost": 104420.11
+      }
+    ],
+    "top_customers": [
+      {
+        "key": "",
+        "total_cost": 6578467.22,
+        "count": 63,
+        "avg_cost": 104420.11
+      }
+    ],
+    "top_channels": [
+      {
+        "key": "",
+        "total_cost": 6578467.22,
+        "count": 63,
+        "avg_cost": 104420.11
+      }
+    ],
+    "top_skus": [
+      {
+        "key": "",
+        "total_cost": 6578467.22,
+        "count": 63,
+        "avg_cost": 104420.11
+      }
+    ],
+    "top_dcs": [
+      {
+        "key": "",
+        "total_cost": 6578467.22,
+        "count": 63,
+        "avg_cost": 104420.11
+      }
+    ],
+    "monthly_costs": []
+  },
+  "priority_imbalances": [
+    {
+      "sku": "AC-B9SL",
+      "location": "1",
+      "priority_score": 4860.75,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 486075
+    },
+    {
+      "sku": "AC-B9SL",
+      "location": "U",
+      "priority_score": 4860.75,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 486075
+    },
+    {
+      "sku": "A-61243",
+      "location": "1",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61243",
+      "location": "2",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61243",
+      "location": "3",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61243",
+      "location": "IF",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61260N",
+      "location": "1",
+      "priority_score": 1073.29,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 107329
+    },
+    {
+      "sku": "A-61260N",
+      "location": "3",
+      "priority_score": 1073.29,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 107329
+    },
+    {
+      "sku": "A-61260N",
+      "location": "IF",
+      "priority_score": 1073.29,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 107329
+    },
+    {
+      "sku": "A-61280",
+      "location": "1",
+      "priority_score": 1025.54,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 102554
+    },
+    {
+      "sku": "A-61280",
+      "location": "U",
+      "priority_score": 1025.54,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 102554
+    },
+    {
+      "sku": "A-61012",
+      "location": "1",
+      "priority_score": 925.01,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 92501
+    },
+    {
+      "sku": "A-61012",
+      "location": "2",
+      "priority_score": 925.01,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 92501
+    },
+    {
+      "sku": "A-61220",
+      "location": "1",
+      "priority_score": 733.1,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 73310
+    },
+    {
+      "sku": "A-61220",
+      "location": "2",
+      "priority_score": 733.1,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 73310
+    },
+    {
+      "sku": "A-61220",
+      "location": "3",
+      "priority_score": 733.1,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 73310
+    },
+    {
+      "sku": "AC-B4BK",
+      "location": "1",
+      "priority_score": 708.02,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 70802
+    },
+    {
+      "sku": "AC-B4BK",
+      "location": "2",
+      "priority_score": 708.02,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 70802
+    },
+    {
+      "sku": "AC-B4BK",
+      "location": "3",
+      "priority_score": 708.02,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 70802
+    },
+    {
+      "sku": "A-61012",
+      "location": "3",
+      "priority_score": 525.01,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 400.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 92501
+    },
+    {
+      "sku": "AC-B16BK",
+      "location": "1",
+      "priority_score": 391.17,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 39117
+    },
+    {
+      "sku": "AC-B16BK",
+      "location": "2",
+      "priority_score": 391.17,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 39117
+    },
+    {
+      "sku": "AC-B16BK",
+      "location": "3",
+      "priority_score": 391.17,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 39117
+    },
+    {
+      "sku": "F-04220",
+      "location": "1",
+      "priority_score": 380.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 38025
+    },
+    {
+      "sku": "F-04220",
+      "location": "2",
+      "priority_score": 380.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 38025
+    },
+    {
+      "sku": "F-04220",
+      "location": "L",
+      "priority_score": 380.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 38025
+    },
+    {
+      "sku": "AC-B8BK",
+      "location": "1",
+      "priority_score": 377.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 37725
+    },
+    {
+      "sku": "AC-B8BK",
+      "location": "2",
+      "priority_score": 377.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 37725
+    },
+    {
+      "sku": "AC-B8BK",
+      "location": "3",
+      "priority_score": 377.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 37725
+    },
+    {
+      "sku": "T-32224",
+      "location": "1",
+      "priority_score": 314.61,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 31461
+    },
+    {
+      "sku": "T-32224",
+      "location": "2",
+      "priority_score": 314.61,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 31461
+    },
+    {
+      "sku": "T-32224",
+      "location": "L",
+      "priority_score": 314.61,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 31461
+    },
+    {
+      "sku": "A-61260",
+      "location": "1",
+      "priority_score": 151.04,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 15104
+    },
+    {
+      "sku": "A-61260",
+      "location": "2",
+      "priority_score": 151.04,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 15104
+    },
+    {
+      "sku": "A-61260",
+      "location": "3",
+      "priority_score": 151.04,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 15104
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "location": "1",
+      "priority_score": 126.19,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 12619
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "location": "3",
+      "priority_score": 126.19,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 12619
+    },
+    {
+      "sku": "AC-B3SLJ",
+      "location": "1",
+      "priority_score": 87.7,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 8770
+    },
+    {
+      "sku": "AC-B3SLJ",
+      "location": "3",
+      "priority_score": 87.7,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 8770
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "location": "2",
+      "priority_score": -622.56,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 748.75,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 12619
+    },
+    {
+      "sku": "F-04211",
+      "location": "1",
+      "priority_score": -141294.0,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 150420.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 912600
+    },
+    {
+      "sku": "F-04211",
+      "location": "L",
+      "priority_score": -199824.0,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 208950.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 912600
+    },
+    {
+      "sku": "F-04211",
+      "location": "2",
+      "priority_score": -1282044.0,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 1291170.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 912600
+    }
+  ]
+}

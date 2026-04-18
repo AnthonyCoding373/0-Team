@@ -573,7 +573,7 @@ def nearest_eta(entries):
     return min(etas) if etas else pd.NaT
 
 
-def compute_decision_support(item, po_map, shipment_map, transfer_map, chargeback_rows):
+def compute_decision_support(item, po_map, shipment_map, transfer_map, chargeback_rows, location=None):
     sku = normalize(item.get("sku"))
     total_qty = float(item.get("total_network_qty", 0) or 0)
 
@@ -588,6 +588,18 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
     max_loc_qty = max(location_qtys) if location_qtys else 0
     imbalance_score = max_loc_qty - min_loc_qty
 
+    # If location is provided, compute location-specific quantity and imbalance context
+    location_qty = None
+    location_total_value = None
+    if location is not None:
+        location_qty = to_num(location.get("qty", 0))
+        location_total_value = to_num(location.get("total_value", 0))
+
+        # Location-specific transfer need: only consider negative or low stock at that location
+        transfer_qty_needed = max(0, abs(location_qty)) if location_qty < 0 else max(0, min(0, location_qty))
+    else:
+        transfer_qty_needed = max(0, abs(min_loc_qty))
+
     # inbound timing
     po_eta = nearest_eta(po_entries)
     ship_eta = nearest_eta(shipment_entries)
@@ -600,7 +612,6 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
 
     # transfer cost heuristic: use transfer qty and a simple per-unit freight assumption
     # if you have lane freight costs, plug them in here
-    transfer_qty_needed = max(0, abs(min_loc_qty))
     freight_cost_per_unit = 1.25
     estimated_transfer_cost = round(transfer_qty_needed * freight_cost_per_unit, 2)
 
@@ -649,6 +660,10 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
     priority_score = round((wait_cost - estimated_transfer_cost) + (imbalance_score * 0.01), 2)
 
     return {
+        "sku": sku,
+        "location": None if location is None else normalize(location.get("location")),
+        "location_qty": round(location_qty, 2) if location_qty is not None else None,
+        "location_total_value": round(location_total_value, 2) if location_total_value is not None else None,
         "imbalance_detected": imbalance_score > 0 or min_loc_qty < 0,
         "imbalance_score": round(imbalance_score, 2),
         "estimated_transfer_cost": estimated_transfer_cost,
@@ -739,21 +754,34 @@ def main():
 
     for item in inventory:
         enriched = dict(item)
-        enriched["decision_support"] = compute_decision_support(
-            enriched, po_map, shipment_map, transfer_map, chargeback_rows
-        )
-        enhanced.append(enriched)
 
-        ds = enriched["decision_support"]
-        if ds["imbalance_detected"]:
-            decision_rank.append({
-                "sku": enriched.get("sku"),
-                "priority_score": ds["priority_score"],
-                "recommendation": ds["recommendation"],
-                "estimated_transfer_cost": ds["estimated_transfer_cost"],
-                "expected_penalty_cost_if_wait": ds["expected_penalty_cost_if_wait"],
-                "imbalance_score": ds["imbalance_score"],
-            })
+        per_location_support = []
+        for loc in enriched.get("locations", []):
+            loc_support = compute_decision_support(
+                enriched, po_map, shipment_map, transfer_map, chargeback_rows, location=loc
+            )
+            per_location_support.append(loc_support)
+
+            if loc_support["imbalance_detected"]:
+                decision_rank.append({
+                    "sku": enriched.get("sku"),
+                    "location": loc_support.get("location"),
+                    "priority_score": loc_support["priority_score"],
+                    "recommendation": loc_support["recommendation"],
+                    "estimated_transfer_cost": loc_support["estimated_transfer_cost"],
+                    "expected_penalty_cost_if_wait": loc_support["expected_penalty_cost_if_wait"],
+                    "imbalance_score": loc_support["imbalance_score"],
+                })
+
+        enriched["decision_support_by_location"] = per_location_support
+
+        # Optional backward-compatible summary at SKU level
+        if per_location_support:
+            enriched["decision_support_summary"] = max(
+                per_location_support, key=lambda x: x["priority_score"]
+            )
+
+        enhanced.append(enriched)
 
     decision_rank.sort(key=lambda x: x["priority_score"], reverse=True)
 
