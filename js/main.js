@@ -7,6 +7,9 @@ const sortBy = document.querySelector(".sort-by");
 const btnsWarning = document.querySelectorAll(".warning-btn");
 const itmSection = document.querySelector(".item-section");
 const detailsSection = document.querySelector(".item-section-details");
+const btnDet = document.querySelector(".overview-btn-det");
+const btnOv = document.querySelector(".overview-btn-over");
+const viewBtnHolder = document.querySelector(".view-btn-holder");
 
 // buttonContainer.addEventListener("click", function (e) {
 //   const targetButton = e.target;
@@ -30,6 +33,10 @@ const detailsSection = document.querySelector(".item-section-details");
 
 const severe = [0, 0, 0];
 const medium = [0, 0, 0];
+
+function formatNumber(num) {
+  return num.toLocaleString("en-US");
+}
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -88,10 +95,10 @@ class dcInf {
             <p class="dc-name">${locations[this.dc_id]}</p>
           </div>
           <div class="information">
-            <p class="qty inf-text">Qty: ${this.quantity}</p>
-            <p class="cost inf-text">Cost: $${this.cost.toFixed(2)}</p>
-            <p class="total-value inf-text">Value: $${this.total_value.toFixed(2)}</p>
-            <p class="risk inf-text">Risk: $${this.risk.toFixed(2)}</p>
+            <p class="qty inf-text">Qty: ${formatNumber(this.quantity)}</p>
+            <p class="cost inf-text">Unit Cost: $${formatNumber(this.cost)}</p>
+            <p class="total-value inf-text">Value: $${formatNumber(this.total_value)}</p>
+            <p class="risk inf-text">Risk: $${formatNumber(this.risk)}</p>
           </div>
         </div>
     `;
@@ -239,7 +246,7 @@ class Item {
               <h3 class="SKU-text">SKU: ${this.sku_id}</h3>
               ${this._getItemStatus()}
             </div>
-            <p class="network-text">Total Network Value: $${this.networkValue.toFixed(2)}</p>
+            <p class="network-text">Total Network Value: $${formatNumber(this.networkValue)}</p>
             <div class="dc-container">
               <div class="dc-inf-container grid grid--col-3">
                 ${this._getDCString()}
@@ -346,6 +353,21 @@ class App {
     buttonContainer.addEventListener("click", this._handleDC.bind(this));
     sortBy.addEventListener("click", this._handleSort.bind(this));
     itmSection.addEventListener("click", this._handleDCClicked.bind(this));
+    viewBtnHolder.addEventListener("click", this._handleButtonClick.bind(this));
+  }
+
+  _handleButtonClick(e) {
+    const btnValue = e.target.closest(".overview-btn");
+
+    console.log(btnValue);
+
+    if (!btnValue) return;
+
+    if (btnValue.classList.contains("overview-btn-det")) {
+      this._activateDetails();
+    } else {
+      this._activateItemsSections();
+    }
   }
 
   _findItem(sku_i) {
@@ -357,15 +379,29 @@ class App {
     console.log(item);
     const dcItem = item._getItemDC(dataInd);
 
+    console.log("b", dcItem.risk);
+
+    detailsSection.innerHTML = "";
+
     // this.recommended_action = recommended_action;
     // this.priority = priority;
     // this.estimated_transfer_cost = estimated_transfer_cost;
     // this.expected_penalty_cost_if_wait = expected_penalty_cost_if_wait;
 
-    const rec =
-      dcItem.recommended_action == "transfer_now"
-        ? "New Transfers Needed"
-        : "Inbound Transfer is Sufficient";
+    let rec;
+    let className = "";
+
+    if (dcItem.RiskLevel > 1) {
+      rec = "New Transfers Needed";
+      className = "red";
+    } else if (dcItem.RiskLevel > 0) {
+      rec = "Inbound sufficient, but inventory sensitive";
+      className = "orange";
+    } else {
+      rec = "Inbound Transfers are sufficient";
+    }
+
+    console.log(dcItem.risk, dcItem.RiskLevel, className);
 
     let html = `
     
@@ -374,12 +410,12 @@ class App {
           <div class="item-header cust">
             <h3 class="SKU-text">${locations[dataInd]}<span class="SKU-text-form "> &middot; SKU: ${dataId}</span></h3>
             <div class="item-status">
-              <h5 class="status-text recom ${dcItem.recommended_action == "transfer_now" ? "red" : ""}">${rec}</h5>
+              <h5 class="status-text recom ${className}">${rec}</h5>
             </div>
           </div>
-          <p class="network-text expec">Expected Penalty with No Action: <span class="total">$${dcItem.expected_penalty_cost_if_wait}</span></p>
-          <p class="network-text trans">Estimated Transfer Cost: <span class="total">$${dcItem.estimated_transfer_cost}</span></p>
-          <p class="network-text pri">Priority: <span>${dcItem.priority}</span></p>
+          <p class="network-text expec">Expected Penalty with No Action: <span class="total">$${formatNumber(dcItem.expected_penalty_cost_if_wait)}</span></p>
+          <p class="network-text trans">Estimated Transfer Cost: <span class="total">$${formatNumber(dcItem.estimated_transfer_cost)}</span></p>
+          <p class="network-text pri">Priority: <span>${formatNumber(dcItem.priority)}</span></p>
       </div>
 
     `;
@@ -390,15 +426,17 @@ class App {
   _activateDetails() {
     itmSection.classList.add("hidden-sec");
     detailsSection.classList.remove("hidden-sec");
+    sortBy.classList.add("hidden-sec");
+    btnOv.classList.remove("overview-btn-active");
+    btnDet.classList.add("overview-btn-active");
   }
 
   _activateItemsSections() {
+    sortBy.classList.remove("hidden-sec");
     detailsSection.classList.add("hidden-sec");
     itmSection.classList.remove("hidden-sec");
-  }
-
-  _createDCElement(dataId, dataInd) {
-    detailsSection.innerHTML = "";
+    btnDet.classList.remove("overview-btn-active");
+    btnOv.classList.add("overview-btn-active");
   }
 
   _handleDCClicked(e) {
