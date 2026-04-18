@@ -165,7 +165,7 @@ icon--medium */
 
 /* Popup width is defined in JS using options */
 .leaflet-popup .leaflet-popup-content-wrapper {
-  background-color: #111;
+  background-color: rgba(44, 44, 44, 0.9);
   color: #fff;
   border-radius: 5px;
   padding-right: 0.6rem;

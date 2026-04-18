@@ -322,7 +322,11 @@ let OKLMed = 0;
 let TESever = 0;
 let TEMed = 0;
 
-const locations = ["LA", "OKL", "TE"];
+// SF - 37.7044175,-121.8210504,17
+// LA - 34.1054726,-117.943218,19
+// NJ-40.3706947,-74.4982064,19
+
+const locations = ["SF", "NJ", "LA"];
 
 class App {
   #map;
@@ -793,7 +797,7 @@ class App {
 
     const coords = [latitude, longitude];
 
-    this.#map = L.map("map").setView(coords, 5);
+    this.#map = L.map("map").setView(coords, 4);
 
     //   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     //     attribution:
@@ -826,10 +830,18 @@ class App {
   }
 }
 
-const tempCoords = [33.6592153, -117.7975974];
-const tempCoords1 = [33.9, -118];
+// SF - 37.7044175,-121.8210504,17
+// LA - 34.1054726,-117.943218,19
+// NJ-40.3706947,-74.4982064,19
 
-const LADC = new DC("LA", 7, 5, tempCoords, 0);
-const OKLDC = new DC("OKL", 3, 4, tempCoords1, 1);
+const sfCoords = [37.7044175, -121.8210504, 17];
+const njCoords = [40.3706947, -74.4982064, 19];
+const laCoords = [34.1054726, -117.943218, 19];
 
-const app = new App(LADC, OKLDC);
+// const locations = ["SF", "NJ", "LA"];
+
+const sfDC = new DC("SF", 3, 4, sfCoords, 0);
+const njDC = new DC("NJ", 3, 4, njCoords, 1);
+const LADC = new DC("LA", 7, 5, laCoords, 2);
+
+const app = new App(sfDC, njDC, LADC);
