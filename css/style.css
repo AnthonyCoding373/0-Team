@@ -298,8 +298,14 @@ icon--none-severe */
   transition: all 0.2s;
 }
 
+.item-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .dc:hover {
-  transform: translateY(-10%);
+  transform: translateY(-5%);
 }
 
 .information {
@@ -313,12 +319,27 @@ icon--none-severe */
   /* display: inline-block; */
 }
 
+.warning-icon- {
+  width: 3.6rem;
+  height: 3.6rem;
+  color: red;
+}
+
 .dc-name {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 1.8rem;
   margin-top: 0.8rem;
 }
+
+/* .item {
+  transition: all 0.2s;
+}
+
+.item:hover {
+  /* border-top: solid 3px rgba(0, 0, 0, 0.2); */
+/* box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1); */
+/* } */
 
 .dc-risk {
   background-color: rgba(255, 0, 0, 0.2);

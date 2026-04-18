@@ -11,6 +11,14 @@ const buttonContainer = document.querySelector(".dashboard--info-container");
 //   }
 // });
 
+class dcInf {
+  // constructor(id, quantity, cost, risk)
+}
+
+class item {
+  // constructor(sku_id, networkValue, )
+}
+
 class DC {
   constructor(id, severe, medium, coords) {
     this.id = id;
