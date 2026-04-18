@@ -12,7 +12,14 @@
           "unit_cost": 12.189546875,
           "total_value": 1253734.05,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 925.01,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -20,7 +27,14 @@
           "unit_cost": 12.39309375,
           "total_value": 427142.33,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 925.01,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -28,7 +42,14 @@
           "unit_cost": 12.499,
           "total_value": 3999.68,
           "inbound_supply": [],
-          "penalty_risk_estimate": 650.6214713216957
+          "penalty_risk_estimate": 650.6214713216957,
+          "decision_support": {
+            "priority_score": 1325.01,
+            "recommendation": "transfer_now",
+            "expected_penalty_cost_if_wait": 768.0,
+            "estimated_transfer_cost": 400.0,
+            "penalty_risk_estimate": 640.0
+          }
         }
       ],
       "sales_traction": {
@@ -121,10 +142,10 @@
           "imbalance_detected": true,
           "imbalance_score": 92501,
           "estimated_transfer_cost": 400.0,
-          "expected_penalty_cost_if_wait": 0.0,
-          "penalty_risk_estimate": 0.0,
+          "expected_penalty_cost_if_wait": 768.0,
+          "penalty_risk_estimate": 640.0,
           "recommendation": "transfer_now",
-          "priority_score": 557.01,
+          "priority_score": 1325.01,
           "inbound": {
             "next_inbound_eta": null,
             "delay_risk": false,
@@ -141,8 +162,8 @@
           },
           "tradeoff": {
             "transfer_cost": 400.0,
-            "wait_cost": 0.0,
-            "difference": -400.0,
+            "wait_cost": 768.0,
+            "difference": 368.0,
             "preferred_action": "transfer_now"
           },
           "transfer_requests": []
@@ -150,16 +171,16 @@
       ],
       "decision_support_summary": {
         "sku": "A-61012",
-        "location": "1",
-        "location_qty": 92181.0,
-        "location_total_value": 1253734.05,
+        "location": "3",
+        "location_qty": -320.0,
+        "location_total_value": 3999.68,
         "imbalance_detected": true,
         "imbalance_score": 92501,
-        "estimated_transfer_cost": 0.0,
-        "expected_penalty_cost_if_wait": 0.0,
-        "penalty_risk_estimate": 0.0,
-        "recommendation": "wait_for_inbound",
-        "priority_score": 925.01,
+        "estimated_transfer_cost": 400.0,
+        "expected_penalty_cost_if_wait": 768.0,
+        "penalty_risk_estimate": 640.0,
+        "recommendation": "transfer_now",
+        "priority_score": 1325.01,
         "inbound": {
           "next_inbound_eta": null,
           "delay_risk": false,
@@ -175,10 +196,10 @@
           "top_related_cause_codes": []
         },
         "tradeoff": {
-          "transfer_cost": 0.0,
-          "wait_cost": 0.0,
-          "difference": 0.0,
-          "preferred_action": "wait_for_inbound"
+          "transfer_cost": 400.0,
+          "wait_cost": 768.0,
+          "difference": 368.0,
+          "preferred_action": "transfer_now"
         },
         "transfer_requests": []
       }
@@ -194,7 +215,14 @@
           "unit_cost": 3.4274444444444443,
           "total_value": 237480.25,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 733.1,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -202,7 +230,14 @@
           "unit_cost": 3.5454999999999997,
           "total_value": 6221.18,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 733.1,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -210,7 +245,14 @@
           "unit_cost": 3.6055208333333333,
           "total_value": 272514.34,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 733.1,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -376,7 +418,14 @@
           "unit_cost": 7.802826923076923,
           "total_value": 909269.33,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1152.88,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -384,7 +433,14 @@
           "unit_cost": 7.8224,
           "total_value": 13265.8,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1152.88,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -392,7 +448,14 @@
           "unit_cost": 7.835307692307692,
           "total_value": 65215.68,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1152.88,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "IF",
@@ -400,7 +463,14 @@
           "unit_cost": 7.977142857142857,
           "total_value": 275594.18,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1152.88,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -600,7 +670,14 @@
           "unit_cost": 10.730428571428572,
           "total_value": 120649.61,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 151.04,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -608,7 +685,14 @@
           "unit_cost": 10.119684210526316,
           "total_value": 199097.39,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 151.04,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -616,7 +700,14 @@
           "unit_cost": 10.416166666666667,
           "total_value": 41460.479999999996,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 151.04,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -782,7 +873,14 @@
           "unit_cost": 9.760464788732396,
           "total_value": 1115281.67,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1073.29,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -790,7 +888,14 @@
           "unit_cost": 9.797086956521738,
           "total_value": 117999.98,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1073.29,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "IF",
@@ -798,7 +903,14 @@
           "unit_cost": 10.920568181818181,
           "total_value": 1284147.31,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1073.29,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -964,7 +1076,14 @@
           "unit_cost": 11.616,
           "total_value": 38717.72,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1025.54,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "U",
@@ -972,7 +1091,14 @@
           "unit_cost": 12.35727027027027,
           "total_value": 1300586.91,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 1025.54,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -1104,7 +1230,14 @@
           "unit_cost": 24.331521739130434,
           "total_value": 684252.92,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 391.17,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -1112,7 +1245,14 @@
           "unit_cost": 25.0069375,
           "total_value": 84642.01000000001,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 391.17,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -1120,7 +1260,14 @@
           "unit_cost": 24.941666666666666,
           "total_value": 1050359.65,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 391.17,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -1286,7 +1433,14 @@
           "unit_cost": 12.574967741935485,
           "total_value": 130097.24,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 87.7,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -1294,7 +1448,14 @@
           "unit_cost": 12.979333333333335,
           "total_value": 20585.71,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 87.7,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -1426,7 +1587,14 @@
           "unit_cost": 7.538418918918919,
           "total_value": 556711.39,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 708.02,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -1434,7 +1602,14 @@
           "unit_cost": 7.6114999999999995,
           "total_value": 29016.17,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 708.02,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -1442,7 +1617,14 @@
           "unit_cost": 7.535783783783784,
           "total_value": 478505.35,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 708.02,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -1608,7 +1790,14 @@
           "unit_cost": 21.154232558139533,
           "total_value": 254014.47,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 126.19,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -1616,7 +1805,14 @@
           "unit_cost": 22.071,
           "total_value": 13309.68,
           "inbound_supply": [],
-          "penalty_risk_estimate": 650.6214713216957
+          "penalty_risk_estimate": 650.6214713216957,
+          "decision_support": {
+            "priority_score": 874.94,
+            "recommendation": "transfer_now",
+            "expected_penalty_cost_if_wait": 1437.6,
+            "estimated_transfer_cost": 748.75,
+            "penalty_risk_estimate": 1198.0
+          }
         },
         {
           "location": "3",
@@ -1624,7 +1820,14 @@
           "unit_cost": 21.827312499999998,
           "total_value": 86880.56999999999,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 126.19,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -1683,10 +1886,10 @@
           "imbalance_detected": true,
           "imbalance_score": 12619,
           "estimated_transfer_cost": 748.75,
-          "expected_penalty_cost_if_wait": 0.0,
-          "penalty_risk_estimate": 0.0,
+          "expected_penalty_cost_if_wait": 1437.6,
+          "penalty_risk_estimate": 1198.0,
           "recommendation": "transfer_now",
-          "priority_score": -562.66,
+          "priority_score": 874.94,
           "inbound": {
             "next_inbound_eta": null,
             "delay_risk": false,
@@ -1703,8 +1906,8 @@
           },
           "tradeoff": {
             "transfer_cost": 748.75,
-            "wait_cost": 0.0,
-            "difference": -748.75,
+            "wait_cost": 1437.6,
+            "difference": 688.85,
             "preferred_action": "transfer_now"
           },
           "transfer_requests": []
@@ -1746,16 +1949,16 @@
       ],
       "decision_support_summary": {
         "sku": "AC-B6SLJ",
-        "location": "1",
-        "location_qty": 12020.0,
-        "location_total_value": 254014.47,
+        "location": "2",
+        "location_qty": -599.0,
+        "location_total_value": 13309.68,
         "imbalance_detected": true,
         "imbalance_score": 12619,
-        "estimated_transfer_cost": 0.0,
-        "expected_penalty_cost_if_wait": 0.0,
-        "penalty_risk_estimate": 0.0,
-        "recommendation": "wait_for_inbound",
-        "priority_score": 126.19,
+        "estimated_transfer_cost": 748.75,
+        "expected_penalty_cost_if_wait": 1437.6,
+        "penalty_risk_estimate": 1198.0,
+        "recommendation": "transfer_now",
+        "priority_score": 874.94,
         "inbound": {
           "next_inbound_eta": null,
           "delay_risk": false,
@@ -1771,10 +1974,10 @@
           "top_related_cause_codes": []
         },
         "tradeoff": {
-          "transfer_cost": 0.0,
-          "wait_cost": 0.0,
-          "difference": 0.0,
-          "preferred_action": "wait_for_inbound"
+          "transfer_cost": 748.75,
+          "wait_cost": 1437.6,
+          "difference": 688.85,
+          "preferred_action": "transfer_now"
         },
         "transfer_requests": []
       }
@@ -1790,7 +1993,14 @@
           "unit_cost": 13.781433962264153,
           "total_value": 675660.94,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 377.25,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -1798,7 +2008,14 @@
           "unit_cost": 14.521270270270271,
           "total_value": 161414.09,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 377.25,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "3",
@@ -1806,7 +2023,14 @@
           "unit_cost": 13.686571428571428,
           "total_value": 284392.76,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 377.25,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -1972,7 +2196,14 @@
           "unit_cost": 20.563,
           "total_value": 16450.4,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 4860.75,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "U",
@@ -1980,7 +2211,14 @@
           "unit_cost": 23.40938636363636,
           "total_value": 11495852.67,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 4860.75,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -2112,7 +2350,14 @@
           "unit_cost": 22.834833333333332,
           "total_value": 1663963.71,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 0.0,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -2210,7 +2455,14 @@
           "unit_cost": 0.2826666666666667,
           "total_value": 33905.549999999996,
           "inbound_supply": [],
-          "penalty_risk_estimate": 650.6214713216957
+          "penalty_risk_estimate": 650.6214713216957,
+          "decision_support": {
+            "priority_score": 159546.0,
+            "recommendation": "transfer_now",
+            "expected_penalty_cost_if_wait": 288806.4,
+            "estimated_transfer_cost": 150420.0,
+            "penalty_risk_estimate": 240672.0
+          }
         },
         {
           "location": "2",
@@ -2218,7 +2470,14 @@
           "unit_cost": 0.29145454545454547,
           "total_value": 300257.72,
           "inbound_supply": [],
-          "penalty_risk_estimate": 650.6214713216957
+          "penalty_risk_estimate": 650.6214713216957,
+          "decision_support": {
+            "priority_score": 1300296.0,
+            "recommendation": "transfer_now",
+            "expected_penalty_cost_if_wait": 2479046.4,
+            "estimated_transfer_cost": 1291170.0,
+            "penalty_risk_estimate": 2065872.0
+          }
         },
         {
           "location": "L",
@@ -2226,7 +2485,14 @@
           "unit_cost": 0.28783333333333333,
           "total_value": 48295.93,
           "inbound_supply": [],
-          "penalty_risk_estimate": 650.6214713216957
+          "penalty_risk_estimate": 650.6214713216957,
+          "decision_support": {
+            "priority_score": 218076.0,
+            "recommendation": "transfer_now",
+            "expected_penalty_cost_if_wait": 401184.0,
+            "estimated_transfer_cost": 208950.0,
+            "penalty_risk_estimate": 334320.0
+          }
         }
       ],
       "sales_traction": {
@@ -2251,10 +2517,10 @@
           "imbalance_detected": true,
           "imbalance_score": 912600,
           "estimated_transfer_cost": 150420.0,
-          "expected_penalty_cost_if_wait": 0.0,
-          "penalty_risk_estimate": 0.0,
+          "expected_penalty_cost_if_wait": 288806.4,
+          "penalty_risk_estimate": 240672.0,
           "recommendation": "transfer_now",
-          "priority_score": -129260.4,
+          "priority_score": 159546.0,
           "inbound": {
             "next_inbound_eta": null,
             "delay_risk": false,
@@ -2271,8 +2537,8 @@
           },
           "tradeoff": {
             "transfer_cost": 150420.0,
-            "wait_cost": 0.0,
-            "difference": -150420.0,
+            "wait_cost": 288806.4,
+            "difference": 138386.4,
             "preferred_action": "transfer_now"
           },
           "transfer_requests": []
@@ -2285,10 +2551,10 @@
           "imbalance_detected": true,
           "imbalance_score": 912600,
           "estimated_transfer_cost": 1291170.0,
-          "expected_penalty_cost_if_wait": 0.0,
-          "penalty_risk_estimate": 0.0,
+          "expected_penalty_cost_if_wait": 2479046.4,
+          "penalty_risk_estimate": 2065872.0,
           "recommendation": "transfer_now",
-          "priority_score": -1178750.4,
+          "priority_score": 1300296.0,
           "inbound": {
             "next_inbound_eta": null,
             "delay_risk": false,
@@ -2305,8 +2571,8 @@
           },
           "tradeoff": {
             "transfer_cost": 1291170.0,
-            "wait_cost": 0.0,
-            "difference": -1291170.0,
+            "wait_cost": 2479046.4,
+            "difference": 1187876.4,
             "preferred_action": "transfer_now"
           },
           "transfer_requests": []
@@ -2319,10 +2585,10 @@
           "imbalance_detected": true,
           "imbalance_score": 912600,
           "estimated_transfer_cost": 208950.0,
-          "expected_penalty_cost_if_wait": 0.0,
-          "penalty_risk_estimate": 0.0,
+          "expected_penalty_cost_if_wait": 401184.0,
+          "penalty_risk_estimate": 334320.0,
           "recommendation": "transfer_now",
-          "priority_score": -183108.0,
+          "priority_score": 218076.0,
           "inbound": {
             "next_inbound_eta": null,
             "delay_risk": false,
@@ -2339,8 +2605,8 @@
           },
           "tradeoff": {
             "transfer_cost": 208950.0,
-            "wait_cost": 0.0,
-            "difference": -208950.0,
+            "wait_cost": 401184.0,
+            "difference": 192234.0,
             "preferred_action": "transfer_now"
           },
           "transfer_requests": []
@@ -2348,16 +2614,16 @@
       ],
       "decision_support_summary": {
         "sku": "F-04211",
-        "location": "1",
-        "location_qty": -120336.0,
-        "location_total_value": 33905.55,
+        "location": "2",
+        "location_qty": -1032936.0,
+        "location_total_value": 300257.72,
         "imbalance_detected": true,
         "imbalance_score": 912600,
-        "estimated_transfer_cost": 150420.0,
-        "expected_penalty_cost_if_wait": 0.0,
-        "penalty_risk_estimate": 0.0,
+        "estimated_transfer_cost": 1291170.0,
+        "expected_penalty_cost_if_wait": 2479046.4,
+        "penalty_risk_estimate": 2065872.0,
         "recommendation": "transfer_now",
-        "priority_score": -129260.4,
+        "priority_score": 1300296.0,
         "inbound": {
           "next_inbound_eta": null,
           "delay_risk": false,
@@ -2373,9 +2639,9 @@
           "top_related_cause_codes": []
         },
         "tradeoff": {
-          "transfer_cost": 150420.0,
-          "wait_cost": 0.0,
-          "difference": -150420.0,
+          "transfer_cost": 1291170.0,
+          "wait_cost": 2479046.4,
+          "difference": 1187876.4,
           "preferred_action": "transfer_now"
         },
         "transfer_requests": []
@@ -2392,7 +2658,14 @@
           "unit_cost": 7.6875,
           "total_value": 37454.19,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 380.25,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -2400,7 +2673,14 @@
           "unit_cost": 8.231727272727273,
           "total_value": 351792.94,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 380.25,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "L",
@@ -2408,7 +2688,14 @@
           "unit_cost": 8.300166666666668,
           "total_value": 58554.42,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 380.25,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -2574,7 +2861,14 @@
           "unit_cost": 13.463000000000001,
           "total_value": 23245.23,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 314.61,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "2",
@@ -2582,7 +2876,14 @@
           "unit_cost": 13.74675,
           "total_value": 457708.56,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 314.61,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         },
         {
           "location": "L",
@@ -2590,7 +2891,14 @@
           "unit_cost": 13.8082,
           "total_value": 159407.79,
           "inbound_supply": [],
-          "penalty_risk_estimate": 0
+          "penalty_risk_estimate": 0,
+          "decision_support": {
+            "priority_score": 314.61,
+            "recommendation": "wait_for_inbound",
+            "expected_penalty_cost_if_wait": 0.0,
+            "estimated_transfer_cost": 0.0,
+            "penalty_risk_estimate": 0.0
+          }
         }
       ],
       "sales_traction": {
@@ -2794,391 +3102,391 @@
   },
   "priority_imbalances": [
     {
-      "sku": "AC-B9SL",
-      "location": "1",
-      "priority_score": 4860.75,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 486075
-    },
-    {
-      "sku": "AC-B9SL",
-      "location": "U",
-      "priority_score": 4860.75,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 486075
-    },
-    {
-      "sku": "A-61243",
-      "location": "1",
-      "priority_score": 1152.88,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 115288
-    },
-    {
-      "sku": "A-61243",
-      "location": "2",
-      "priority_score": 1152.88,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 115288
-    },
-    {
-      "sku": "A-61243",
-      "location": "3",
-      "priority_score": 1152.88,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 115288
-    },
-    {
-      "sku": "A-61243",
-      "location": "IF",
-      "priority_score": 1152.88,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 115288
-    },
-    {
-      "sku": "A-61260N",
-      "location": "1",
-      "priority_score": 1073.29,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 107329
-    },
-    {
-      "sku": "A-61260N",
-      "location": "3",
-      "priority_score": 1073.29,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 107329
-    },
-    {
-      "sku": "A-61260N",
-      "location": "IF",
-      "priority_score": 1073.29,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 107329
-    },
-    {
-      "sku": "A-61280",
-      "location": "1",
-      "priority_score": 1025.54,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 102554
-    },
-    {
-      "sku": "A-61280",
-      "location": "U",
-      "priority_score": 1025.54,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 102554
-    },
-    {
-      "sku": "A-61012",
-      "location": "1",
-      "priority_score": 925.01,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 92501
-    },
-    {
-      "sku": "A-61012",
-      "location": "2",
-      "priority_score": 925.01,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 92501
-    },
-    {
-      "sku": "A-61220",
-      "location": "1",
-      "priority_score": 733.1,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 73310
-    },
-    {
-      "sku": "A-61220",
-      "location": "2",
-      "priority_score": 733.1,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 73310
-    },
-    {
-      "sku": "A-61220",
-      "location": "3",
-      "priority_score": 733.1,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 73310
-    },
-    {
-      "sku": "AC-B4BK",
-      "location": "1",
-      "priority_score": 708.02,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 70802
-    },
-    {
-      "sku": "AC-B4BK",
-      "location": "2",
-      "priority_score": 708.02,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 70802
-    },
-    {
-      "sku": "AC-B4BK",
-      "location": "3",
-      "priority_score": 708.02,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 70802
-    },
-    {
-      "sku": "A-61012",
-      "location": "3",
-      "priority_score": 557.01,
-      "recommendation": "transfer_now",
-      "estimated_transfer_cost": 400.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 92501
-    },
-    {
-      "sku": "AC-B16BK",
-      "location": "1",
-      "priority_score": 391.17,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 39117
-    },
-    {
-      "sku": "AC-B16BK",
-      "location": "2",
-      "priority_score": 391.17,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 39117
-    },
-    {
-      "sku": "AC-B16BK",
-      "location": "3",
-      "priority_score": 391.17,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 39117
-    },
-    {
-      "sku": "F-04220",
-      "location": "1",
-      "priority_score": 380.25,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 38025
-    },
-    {
-      "sku": "F-04220",
-      "location": "2",
-      "priority_score": 380.25,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 38025
-    },
-    {
-      "sku": "F-04220",
-      "location": "L",
-      "priority_score": 380.25,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 38025
-    },
-    {
-      "sku": "AC-B8BK",
-      "location": "1",
-      "priority_score": 377.25,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 37725
-    },
-    {
-      "sku": "AC-B8BK",
-      "location": "2",
-      "priority_score": 377.25,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 37725
-    },
-    {
-      "sku": "AC-B8BK",
-      "location": "3",
-      "priority_score": 377.25,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 37725
-    },
-    {
-      "sku": "T-32224",
-      "location": "1",
-      "priority_score": 314.61,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 31461
-    },
-    {
-      "sku": "T-32224",
-      "location": "2",
-      "priority_score": 314.61,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 31461
-    },
-    {
-      "sku": "T-32224",
-      "location": "L",
-      "priority_score": 314.61,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 31461
-    },
-    {
-      "sku": "A-61260",
-      "location": "1",
-      "priority_score": 151.04,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 15104
-    },
-    {
-      "sku": "A-61260",
-      "location": "2",
-      "priority_score": 151.04,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 15104
-    },
-    {
-      "sku": "A-61260",
-      "location": "3",
-      "priority_score": 151.04,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 15104
-    },
-    {
-      "sku": "AC-B6SLJ",
-      "location": "1",
-      "priority_score": 126.19,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 12619
-    },
-    {
-      "sku": "AC-B6SLJ",
-      "location": "3",
-      "priority_score": 126.19,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 12619
-    },
-    {
-      "sku": "AC-B3SLJ",
-      "location": "1",
-      "priority_score": 87.7,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 8770
-    },
-    {
-      "sku": "AC-B3SLJ",
-      "location": "3",
-      "priority_score": 87.7,
-      "recommendation": "wait_for_inbound",
-      "estimated_transfer_cost": 0.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 8770
-    },
-    {
-      "sku": "AC-B6SLJ",
-      "location": "2",
-      "priority_score": -562.66,
-      "recommendation": "transfer_now",
-      "estimated_transfer_cost": 748.75,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 12619
-    },
-    {
-      "sku": "F-04211",
-      "location": "1",
-      "priority_score": -129260.4,
-      "recommendation": "transfer_now",
-      "estimated_transfer_cost": 150420.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 912600
-    },
-    {
-      "sku": "F-04211",
-      "location": "L",
-      "priority_score": -183108.0,
-      "recommendation": "transfer_now",
-      "estimated_transfer_cost": 208950.0,
-      "expected_penalty_cost_if_wait": 0.0,
-      "imbalance_score": 912600
-    },
-    {
       "sku": "F-04211",
       "location": "2",
-      "priority_score": -1178750.4,
+      "priority_score": 1300296.0,
       "recommendation": "transfer_now",
       "estimated_transfer_cost": 1291170.0,
-      "expected_penalty_cost_if_wait": 0.0,
+      "expected_penalty_cost_if_wait": 2479046.4,
       "imbalance_score": 912600
+    },
+    {
+      "sku": "F-04211",
+      "location": "L",
+      "priority_score": 218076.0,
+      "recommendation": "transfer_now",
+      "estimated_transfer_cost": 208950.0,
+      "expected_penalty_cost_if_wait": 401184.0,
+      "imbalance_score": 912600
+    },
+    {
+      "sku": "F-04211",
+      "location": "1",
+      "priority_score": 159546.0,
+      "recommendation": "transfer_now",
+      "estimated_transfer_cost": 150420.0,
+      "expected_penalty_cost_if_wait": 288806.4,
+      "imbalance_score": 912600
+    },
+    {
+      "sku": "AC-B9SL",
+      "location": "1",
+      "priority_score": 4860.75,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 486075
+    },
+    {
+      "sku": "AC-B9SL",
+      "location": "U",
+      "priority_score": 4860.75,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 486075
+    },
+    {
+      "sku": "A-61012",
+      "location": "3",
+      "priority_score": 1325.01,
+      "recommendation": "transfer_now",
+      "estimated_transfer_cost": 400.0,
+      "expected_penalty_cost_if_wait": 768.0,
+      "imbalance_score": 92501
+    },
+    {
+      "sku": "A-61243",
+      "location": "1",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61243",
+      "location": "2",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61243",
+      "location": "3",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61243",
+      "location": "IF",
+      "priority_score": 1152.88,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 115288
+    },
+    {
+      "sku": "A-61260N",
+      "location": "1",
+      "priority_score": 1073.29,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 107329
+    },
+    {
+      "sku": "A-61260N",
+      "location": "3",
+      "priority_score": 1073.29,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 107329
+    },
+    {
+      "sku": "A-61260N",
+      "location": "IF",
+      "priority_score": 1073.29,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 107329
+    },
+    {
+      "sku": "A-61280",
+      "location": "1",
+      "priority_score": 1025.54,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 102554
+    },
+    {
+      "sku": "A-61280",
+      "location": "U",
+      "priority_score": 1025.54,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 102554
+    },
+    {
+      "sku": "A-61012",
+      "location": "1",
+      "priority_score": 925.01,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 92501
+    },
+    {
+      "sku": "A-61012",
+      "location": "2",
+      "priority_score": 925.01,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 92501
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "location": "2",
+      "priority_score": 874.94,
+      "recommendation": "transfer_now",
+      "estimated_transfer_cost": 748.75,
+      "expected_penalty_cost_if_wait": 1437.6,
+      "imbalance_score": 12619
+    },
+    {
+      "sku": "A-61220",
+      "location": "1",
+      "priority_score": 733.1,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 73310
+    },
+    {
+      "sku": "A-61220",
+      "location": "2",
+      "priority_score": 733.1,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 73310
+    },
+    {
+      "sku": "A-61220",
+      "location": "3",
+      "priority_score": 733.1,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 73310
+    },
+    {
+      "sku": "AC-B4BK",
+      "location": "1",
+      "priority_score": 708.02,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 70802
+    },
+    {
+      "sku": "AC-B4BK",
+      "location": "2",
+      "priority_score": 708.02,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 70802
+    },
+    {
+      "sku": "AC-B4BK",
+      "location": "3",
+      "priority_score": 708.02,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 70802
+    },
+    {
+      "sku": "AC-B16BK",
+      "location": "1",
+      "priority_score": 391.17,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 39117
+    },
+    {
+      "sku": "AC-B16BK",
+      "location": "2",
+      "priority_score": 391.17,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 39117
+    },
+    {
+      "sku": "AC-B16BK",
+      "location": "3",
+      "priority_score": 391.17,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 39117
+    },
+    {
+      "sku": "F-04220",
+      "location": "1",
+      "priority_score": 380.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 38025
+    },
+    {
+      "sku": "F-04220",
+      "location": "2",
+      "priority_score": 380.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 38025
+    },
+    {
+      "sku": "F-04220",
+      "location": "L",
+      "priority_score": 380.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 38025
+    },
+    {
+      "sku": "AC-B8BK",
+      "location": "1",
+      "priority_score": 377.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 37725
+    },
+    {
+      "sku": "AC-B8BK",
+      "location": "2",
+      "priority_score": 377.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 37725
+    },
+    {
+      "sku": "AC-B8BK",
+      "location": "3",
+      "priority_score": 377.25,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 37725
+    },
+    {
+      "sku": "T-32224",
+      "location": "1",
+      "priority_score": 314.61,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 31461
+    },
+    {
+      "sku": "T-32224",
+      "location": "2",
+      "priority_score": 314.61,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 31461
+    },
+    {
+      "sku": "T-32224",
+      "location": "L",
+      "priority_score": 314.61,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 31461
+    },
+    {
+      "sku": "A-61260",
+      "location": "1",
+      "priority_score": 151.04,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 15104
+    },
+    {
+      "sku": "A-61260",
+      "location": "2",
+      "priority_score": 151.04,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 15104
+    },
+    {
+      "sku": "A-61260",
+      "location": "3",
+      "priority_score": 151.04,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 15104
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "location": "1",
+      "priority_score": 126.19,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 12619
+    },
+    {
+      "sku": "AC-B6SLJ",
+      "location": "3",
+      "priority_score": 126.19,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 12619
+    },
+    {
+      "sku": "AC-B3SLJ",
+      "location": "1",
+      "priority_score": 87.7,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 8770
+    },
+    {
+      "sku": "AC-B3SLJ",
+      "location": "3",
+      "priority_score": 87.7,
+      "recommendation": "wait_for_inbound",
+      "estimated_transfer_cost": 0.0,
+      "expected_penalty_cost_if_wait": 0.0,
+      "imbalance_score": 8770
     }
   ]
 }

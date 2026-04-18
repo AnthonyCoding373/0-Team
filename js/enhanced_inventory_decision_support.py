@@ -697,6 +697,7 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
     estimated_transfer_cost = round(shortage_qty * freight_cost_per_unit, 2)
 
     # penalty exposure heuristic from chargeback history
+    # penalty exposure heuristic from chargeback history
     chargeback_cost = round(sum(r["amount"] for r in relevant_chargebacks), 2)
     operational_chargeback_cost = round(
         sum(r["amount"] for r in relevant_chargebacks if r["type"] == "operational_penalty"), 2
@@ -705,18 +706,48 @@ def compute_decision_support(item, po_map, shipment_map, transfer_map, chargebac
         sum(r["amount"] for r in relevant_chargebacks if r["type"] == "planned_promotional_deduction"), 2
     )
 
+    chargeback_count = len(relevant_chargebacks)
+    operational_count = sum(1 for r in relevant_chargebacks if r["type"] == "operational_penalty")
+    planned_count = sum(1 for r in relevant_chargebacks if r["type"] == "planned_promotional_deduction")
+
     recent_sales = item.get("sales_traction", {})
     sell_out_risk = recent_sales.get("sell_out_risk", "low")
     sales_trend = recent_sales.get("trend", "flat")
 
-    # simple risk scoring
-    penalty_risk_estimate = chargeback_cost * 0.5
+    # Add location-based pressure so the score varies by location, not just SKU
+    location_pressure = 0.0
+    if location_qty is not None:
+        if location_qty < 0:
+            location_pressure = abs(location_qty) * 2.0
+        elif location_qty < 25:
+            location_pressure = (25 - location_qty) * 1.0
+
+    # Base risk uses cost + event count, not just cost
+    penalty_risk_estimate = (
+            (chargeback_cost * 0.35)
+            + (chargeback_count * 12.0)
+            + (operational_chargeback_cost * 0.25)
+            + (operational_count * 8.0)
+            + (planned_deduction_cost * 0.10)
+            + (planned_count * 4.0)
+            + location_pressure
+    )
+
+    # Risk multipliers
     if sell_out_risk == "high":
-        penalty_risk_estimate *= 1.5
+        penalty_risk_estimate *= 1.35
+    elif sell_out_risk == "medium":
+        penalty_risk_estimate *= 1.15
+
     if delay_risk or fda_hold:
-        penalty_risk_estimate *= 1.4
-    if sales_trend == "increasing":
         penalty_risk_estimate *= 1.25
+
+    if sales_trend == "increasing":
+        penalty_risk_estimate *= 1.10
+    elif sales_trend == "decreasing":
+        penalty_risk_estimate *= 0.90
+
+    penalty_risk_estimate = round(penalty_risk_estimate, 2)
 
     penalty_risk_estimate = round(penalty_risk_estimate, 2)
 
@@ -856,12 +887,24 @@ def main():
     for item in inventory:
         enriched = dict(item)
 
-        per_location_support = []
+        location_results = []
+        enriched_locations = []
+
         for loc in enriched.get("locations", []):
             loc_support = compute_decision_support(
                 enriched, po_map, shipment_map, transfer_map, chargeback_rows, location=loc
             )
-            per_location_support.append(loc_support)
+            location_results.append(loc_support)
+
+            enriched_location = dict(loc)
+            enriched_location["decision_support"] = {
+                "priority_score": loc_support["priority_score"],
+                "recommendation": loc_support["recommendation"],
+                "expected_penalty_cost_if_wait": loc_support["expected_penalty_cost_if_wait"],
+                "estimated_transfer_cost": loc_support["estimated_transfer_cost"],
+                "penalty_risk_estimate": loc_support["penalty_risk_estimate"],
+            }
+            enriched_locations.append(enriched_location)
 
             if loc_support["imbalance_detected"]:
                 decision_rank.append({
@@ -874,12 +917,13 @@ def main():
                     "imbalance_score": loc_support["imbalance_score"],
                 })
 
-        enriched["decision_support_by_location"] = per_location_support
+        enriched["locations"] = enriched_locations
+        enriched["decision_support_by_location"] = location_results
 
         # Optional backward-compatible summary at SKU level
-        if per_location_support:
+        if location_results:
             enriched["decision_support_summary"] = max(
-                per_location_support, key=lambda x: x["priority_score"]
+                location_results, key=lambda x: x["priority_score"]
             )
 
         enhanced.append(enriched)
@@ -897,7 +941,6 @@ def main():
         json.dump(output, f, indent=2, ensure_ascii=False)
 
     print(f"Written: {OUTPUT_FILE}")
-
 
 if __name__ == "__main__":
     main()
