@@ -29,13 +29,41 @@ function numberWithCommas(x) {
 }
 
 class dcInf {
-  constructor(sku_id, dc_id, quantity, cost, risk, total_value) {
+  constructor(
+    sku_id,
+    dc_id,
+    quantity,
+    cost,
+    risk,
+    total_value,
+    recommended_action,
+    priority,
+  ) {
     this.sku_id = sku_id;
     this.dc_id = dc_id;
     this.quantity = quantity;
     this.cost = cost;
     this.risk = risk;
     this.total_value = total_value;
+    this.recommended_action = recommended_action;
+    this.priority = priority;
+  }
+
+  _getIsAtRisk() {
+    console.log(this.recommended_action, this.risk);
+
+    if (this.recommended_action === "transfer_now" && this.risk > 200) {
+      return 2;
+    }
+
+    if (
+      this.recommended_action === "wait_for_inbound" &&
+      (this.risk > 0 || this.priority > 500 || this.quantity <= 0)
+    ) {
+      return 1;
+    }
+
+    return 0;
   }
 
   _getHTMLContent() {
@@ -70,6 +98,51 @@ class Item {
     this.#dcInfs.push(dcInf);
   }
 
+  _getRiskLevel() {
+    let currentRiskLevel = 0;
+
+    this.#dcInfs.forEach((dc) => {
+      const val = dc._getIsAtRisk();
+      if (val > currentRiskLevel) {
+        currentRiskLevel = val;
+      }
+    });
+
+    return currentRiskLevel;
+  }
+
+  _getRiskText() {
+    const result = this._getRiskLevel();
+
+    console.log("risk", result);
+
+    if (result === 0) {
+      return `
+      <ion-icon
+        class="icon healthy-icon"
+        name="checkbox-outline"
+      ></ion-icon>
+      <h5 class="status-text">No action needed</h5>
+      `;
+    } else if (result === 0) {
+      return `                       
+        <ion-icon
+          name="alert-circle-outline"
+          class="icon icon--medium"
+        ></ion-icon>
+        <h5 class="status-text">Warning</h5>
+      `;
+    } else if (result === 2) {
+      return `
+          <ion-icon
+            class="icon warning-icon-"
+            name="warning-outline"
+          ></ion-icon>
+          <h5 class="status-text">Action needed</h5>
+      `;
+    }
+  }
+
   _getDCString() {
     let html = "";
 
@@ -87,11 +160,7 @@ class Item {
     let html = `
     
     <div class="item-status">
-      <ion-icon
-        class="icon healthy-icon"
-        name="checkbox-outline"
-      ></ion-icon>
-      <h5 class="status-text">No action needed</h5>
+      ${this._getRiskText()}
     </div>
     
     `;
@@ -137,10 +206,10 @@ class Item {
     return html;
   }
 
-  _create(dcINf) {
+  _create() {
     // console.log(dcINf._getHTMLContent());
     // const SKU = document.querySelector(`.item[data-id="${this.sku_id}"]`)
-    dcContainer.insertAdjacentHTML("afterbegin", dcINf._getHTMLContent());
+    dcContainer.insertAdjacentHTML("afterbegin", this._getHTMLContent());
   }
 }
 
@@ -226,7 +295,7 @@ class App {
   async _readData() {
     try {
       const response = await fetch(
-        "./Json/enhanced_per_sku_inventory_with_trends.json",
+        "./Json/enhanced_inventory_decision_support.json",
       );
 
       if (!response.ok) {
@@ -234,9 +303,10 @@ class App {
       }
 
       const data = await response.json();
+      console.log("hello");
       console.log(data);
 
-      data.forEach((d) => {
+      data.inventory.forEach((d) => {
         const skuID = d.sku;
         const networkValue = d.total_network_value;
         const newItem = new Item(skuID, networkValue);
@@ -244,28 +314,39 @@ class App {
 
         const maxSize = locations.length;
 
+        const arrayVal = [];
+
         locations.forEach((loc, i) => {
           if (i >= maxSize) return;
+
+          console.log(loc);
+          console.log(loc.decision_support);
+          const expected_support_summary =
+            loc.decision_support.estimated_transfer_cost;
+          console.log(expected_support_summary);
+          console.log(loc.decision_support.recommendation);
 
           const newDCLoc = new dcInf(
             skuID,
             i,
             loc.qty,
             loc.unit_cost,
-            loc.penalty_risk_estimate,
-            loc.unit_cost * loc.qty,
+            expected_support_summary,
+            loc.qty * loc.unit_cost,
+            loc.decision_support.recommendation,
+            loc.decision_support.priority_score,
           );
+
           newItem._pushDC(newDCLoc);
-          // console.log(newDCLoc);
+          console.log(newDCLoc);
         });
 
         this.#items.push(newItem);
-
-        newItem._create(newItem);
       });
     } catch (err) {
       console.log(err);
     }
+    this.#items.forEach((it) => it._create());
   }
 
   _rendorItems() {
