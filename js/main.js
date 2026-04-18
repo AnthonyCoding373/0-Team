@@ -3,6 +3,8 @@
 // const buttons = document.querySelectorAll(".dashboard--button");
 const buttonContainer = document.querySelector(".dashboard--info-container");
 const dcContainer = document.querySelector(".item-section");
+const sortBy = document.querySelector(".sort-by");
+const btnsWarning = document.querySelectorAll(".warning-btn");
 
 // buttonContainer.addEventListener("click", function (e) {
 //   const targetButton = e.target;
@@ -23,6 +25,9 @@ const dcContainer = document.querySelector(".item-section");
 //             <h5 class="status-text">${risk > 0 ? "Action needed" : "No action needed"}</h5>
 //           </div>
 //         </div>
+
+const severe = [0, 0, 0];
+const medium = [0, 0, 0];
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -98,6 +103,24 @@ class Item {
     // this._create();
   }
 
+  _calcAmount() {
+    this.#dcInfs.forEach((it, i) => {
+      console.log("C", it);
+
+      if (it.RiskLevel > 0) {
+        console.log("DFDFDF");
+      }
+
+      if (it.RiskLevel > 1) {
+        severe[i] += 1;
+      } else if (it.RiskLevel) {
+        medium[i] += 1;
+      }
+    });
+
+    console.log(severe, medium);
+  }
+
   _pushDC(dcInf) {
     this.#dcInfs.push(dcInf);
   }
@@ -123,6 +146,7 @@ class Item {
       }
     });
 
+    // this.risk = currentRiskLevel;
     return currentRiskLevel;
   }
 
@@ -244,12 +268,13 @@ class Item {
 }
 
 class DC {
-  constructor(id, severe, medium, coords) {
+  constructor(id, severe, medium, coords, ind) {
     this.id = id;
     this.severe = severe;
     this.medium = medium;
     this.coords = coords;
     this._setUpButton();
+    this.ind = ind;
   }
 
   _setMarker(marker) {
@@ -257,11 +282,13 @@ class DC {
   }
 
   _setButtonText() {
-    const severe = this.button.querySelector(".warning--text-severe");
-    const medium = this.button.querySelector(".warning--text-medium");
+    const sever = this.button.querySelector(".warning--text-severe");
+    const med = this.button.querySelector(".warning--text-medium");
 
-    severe.textContent = this.severe;
-    medium.textContent = this.medium;
+    console.log("BAB", severe, medium);
+
+    sever.textContent = severe[this.ind];
+    med.textContent = medium[this.ind];
   }
 
   _setUnSelected() {
@@ -275,9 +302,15 @@ class DC {
   _setUpButton() {
     this.button = document.querySelector(`#${this.id}`);
     // console.log(this.button);
-    this._setButtonText();
   }
 }
+
+let laSevere = 0;
+let laMed = 0;
+let OKLSever = 0;
+let OKLMed = 0;
+let TESever = 0;
+let TEMed = 0;
 
 const locations = ["LA", "OKL", "TE"];
 
@@ -290,27 +323,70 @@ class App {
     this.#DCs = [...DCS];
     this.currentDC;
 
-    this._getPosition();
     this._readData();
+
+    this._getPosition();
+
     // this._rendorMapMarkers();
     // Event Listeners
     buttonContainer.addEventListener("click", this._handleDC.bind(this));
+    sortBy.addEventListener("click", this._handleSort.bind(this));
   }
 
-  _getMapHTMLContent(dc) {
+  _calcAmt() {
+    console.log("ba", this.#items);
+
+    this.#items.forEach((it, i) => {
+      it._calcAmount();
+      // TESever += it._getTESevere();
+      // TEMed += it._getTEMedium();
+    });
+
+    console.log(medium);
+    console.log(severe);
+  }
+
+  _handleSort(e) {
+    const target = e.target.closest(".warning-btn");
+
+    if (!target) return;
+
+    // console.log(target.classList.contains("warning-btn"));
+
+    if (!target.classList.contains("warning-btn")) return;
+
+    console.log(e.target);
+
+    btnsWarning.forEach((bt) => {
+      if (bt === target) {
+        bt.classList.add("overview-btn-active");
+      } else {
+        bt.classList.remove("overview-btn-active");
+      }
+    });
+
+    console.log(target.dataset.num);
+
+    this._reorderData(target.dataset.num);
+  }
+
+  _getMapHTMLContent(dc, i) {
+    let sever = severe[i];
+    let med = medium[i];
+
     let HTML = `
       <div class = "popup-icon-div" data-id = "${dc.id}">
       <p class>${dc.id}</p>
       <div class="status-indicator">
         <div class="warning-medium warning">
-          <p class="warning--text warning--text-severe">${dc.severe}</p>
+          <p class="warning--text warning--text-severe">${sever}</p>
           <ion-icon
             name="warning-outline"
             class="icon icon--severe"
           ></ion-icon>
         </div>
         <div class="warning-severe warning">
-          <p class="warning--text warning--text-medium">${dc.medium}</p>
+          <p class="warning--text warning--text-medium">${med}</p>
           <ion-icon
             name="alert-circle-outline"
             class="icon icon--medium"
@@ -325,7 +401,16 @@ class App {
   _reorderData(type) {
     const dcInfContainer = document.querySelector(".item-section");
     if (type == 0) {
-      this.#items.forEach((it) => it._create());
+      dcInfContainer.innerHTML = "";
+
+      const result = this.#items.toSorted((a, b) => {
+        console.log(a.RiskLevel);
+        if (a.RiskLevel < b.RiskLevel) return 1;
+        if (a.RiskLevel > b.RiskLevel) return -1;
+        return 0;
+      });
+
+      result.forEach((it) => it._create());
     }
 
     if (type == 1) {
@@ -418,7 +503,7 @@ class App {
     }
     this.#items.forEach((it) => it._create());
 
-    setTimeout(this._reorderData.bind(this, 1), 5000);
+    // setTimeout(this._reorderData.bind(this, 1), 5000);
   }
 
   _rendorItems() {
@@ -520,7 +605,7 @@ class App {
 
   // loadDashboard();
 
-  _rendorMapMarkers(dc) {
+  _rendorMapMarkers(dc, i) {
     const popUpObject = L.popup({
       maxWidth: 250,
       maxHeight: 100,
@@ -531,10 +616,12 @@ class App {
     const marker = L.marker(dc.coords)
       .addTo(this.#map)
       .bindPopup(popUpObject)
-      .setPopupContent(this._getMapHTMLContent(dc))
+      .setPopupContent(this._getMapHTMLContent(dc, i))
       .openPopup();
 
     dc._setMarker(marker);
+
+    dc._setButtonText();
 
     marker.on("click", (e) => {
       console.log(e);
@@ -654,8 +741,10 @@ class App {
 
     // this.#map.on("click", this._showForm.bind(this));
 
-    this.#DCs.forEach((dc) => {
-      this._rendorMapMarkers(dc);
+    this._calcAmt();
+
+    this.#DCs.forEach((dc, i) => {
+      this._rendorMapMarkers(dc, i);
     });
   }
 }
@@ -663,7 +752,7 @@ class App {
 const tempCoords = [33.6592153, -117.7975974];
 const tempCoords1 = [33.9, -118];
 
-const LADC = new DC("LA", 7, 5, tempCoords);
-const OKLDC = new DC("OKL", 3, 4, tempCoords1);
+const LADC = new DC("LA", 7, 5, tempCoords, 0);
+const OKLDC = new DC("OKL", 3, 4, tempCoords1, 1);
 
 const app = new App(LADC, OKLDC);
