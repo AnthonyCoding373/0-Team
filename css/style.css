@@ -231,12 +231,34 @@ icon--medium */
   font-weight: 500;
 }
 
+.item-section-details {
+  height: 80rem;
+}
+
+.details-back {
+  background-color: #666;
+}
+
+.hidden-sec {
+  display: none !important;
+}
+
 .overview-btn-active {
   box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.8) !important;
 }
 
 .overview-btn:hover {
   box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.cust h5 h3 {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 6rem;
+}
+
+.cust {
+  margin-bottom: 2.4rem;
 }
 
 /* dashboard-view
@@ -275,6 +297,7 @@ icon--none-severe */
 
 .status-text {
   font-size: 2rem;
+  padding-right: 2rem;
 }
 
 .SKU-text {
@@ -282,6 +305,19 @@ icon--none-severe */
   font-weight: 600;
   margin: 0;
   padding: 0;
+}
+
+.details-back {
+  margin-top: 3rem;
+}
+
+.details-back {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), (0, 0, 0, 0.6));
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
+}
+
+.item span {
+  font-weight: 600;
 }
 
 .network-text {
@@ -368,7 +404,8 @@ icon--none-severe */
   margin-bottom: 1.8rem;
 }
 
-.risk {
+.risk,
+.total {
   color: red;
 }
 

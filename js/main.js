@@ -5,6 +5,8 @@ const buttonContainer = document.querySelector(".dashboard--info-container");
 const dcContainer = document.querySelector(".item-section");
 const sortBy = document.querySelector(".sort-by");
 const btnsWarning = document.querySelectorAll(".warning-btn");
+const itmSection = document.querySelector(".item-section");
+const detailsSection = document.querySelector(".item-section-details");
 
 // buttonContainer.addEventListener("click", function (e) {
 //   const targetButton = e.target;
@@ -43,6 +45,8 @@ class dcInf {
     total_value,
     recommended_action,
     priority,
+    estimated_transfer_cost,
+    expected_penalty_cost_if_wait,
   ) {
     this.sku_id = sku_id;
     this.dc_id = dc_id;
@@ -52,6 +56,8 @@ class dcInf {
     this.total_value = total_value;
     this.recommended_action = recommended_action;
     this.priority = priority;
+    this.estimated_transfer_cost = estimated_transfer_cost;
+    this.expected_penalty_cost_if_wait = expected_penalty_cost_if_wait;
   }
 
   _getIsAtRisk() {
@@ -77,7 +83,7 @@ class dcInf {
   _getHTMLContent() {
     console.log("Called", `${this.RiskLevel > 0 ? "dc-risk" : ""}`);
     let html = `
-        <div class="dc ${this.RiskLevel > 0 ? "dc-risk" : ""}" data-id= "${this.sku_id}">
+        <div class="dc ${this.RiskLevel > 0 ? "dc-risk" : ""}" data-id= "${this.sku_id}" data-ind = "${this.dc_id}">
           <div class="dc-header">
             <p class="dc-name">${locations[this.dc_id]}</p>
           </div>
@@ -103,13 +109,17 @@ class Item {
     // this._create();
   }
 
+  _getItemDC(i) {
+    return this.#dcInfs[i];
+  }
+
   _calcAmount() {
     this.#dcInfs.forEach((it, i) => {
-      console.log("C", it);
+      // console.log("C", it);
 
-      if (it.RiskLevel > 0) {
-        console.log("DFDFDF");
-      }
+      // if (it.RiskLevel > 0) {
+      //   console.log("DFDFDF");
+      // }
 
       if (it.RiskLevel > 1) {
         severe[i] += 1;
@@ -331,6 +341,66 @@ class App {
     // Event Listeners
     buttonContainer.addEventListener("click", this._handleDC.bind(this));
     sortBy.addEventListener("click", this._handleSort.bind(this));
+    itmSection.addEventListener("click", this._handleDCClicked.bind(this));
+  }
+
+  _findItem(sku_i) {
+    return this.#items.find((t) => t.sku_id == sku_i);
+  }
+
+  _createDetails(dataId, dataInd) {
+    const item = this._findItem(dataId);
+    console.log(item);
+    const dcItem = item._getItemDC(dataInd);
+
+    // this.recommended_action = recommended_action;
+    // this.priority = priority;
+    // this.estimated_transfer_cost = estimated_transfer_cost;
+    // this.expected_penalty_cost_if_wait = expected_penalty_cost_if_wait;
+
+    let html = `
+    
+      <div class="item-section container">
+        <div class="item details-back" data-sku="134">
+          <div class="item-header cust">
+            <h3 class="SKU-text">${locations[dataInd]}<span class="SKU-text-form">&middot; SKU: ${dataId}</span></h3>
+            <div class="item-status">
+              <h5 class="status-text recom">Recommended: ${dcItem.recommended_action}</h5>
+            </div>
+          </div>
+          <p class="network-text expec">Expected Penalty with No Action: <span class="total">$${dcItem.expected_penalty_cost_if_wait}</span></p>
+          <p class="network-text trans">Estimated Transfer Cost: <span class="total">$${dcItem.estimated_transfer_cost}</span></p>
+          <p class="network-text pri">Priority: <span>${dcItem.priority}</span></p>
+      </div>
+
+    `;
+
+    detailsSection.insertAdjacentHTML("afterbegin", html);
+  }
+
+  _activateDetails() {
+    itmSection.classList.add("hidden-sec");
+    detailsSection.classList.remove("hidden-sec");
+  }
+
+  _activateItemsSections() {
+    detailsSection.classList.add("hidden-sec");
+    itmSection.classList.remove("hidden-sec");
+  }
+
+  _createDCElement(dataId, dataInd) {
+    detailsSection.innerHTML = "";
+  }
+
+  _handleDCClicked(e) {
+    const dcObject = e.target.closest(".dc");
+    if (dcObject) {
+      const dataId = dcObject.dataset.id;
+      const dataInd = dcObject.dataset.ind;
+      console.log(dataId, dataInd);
+      this._activateDetails();
+      this._createDetails(dataId, dataInd);
+    }
   }
 
   _calcAmt() {
@@ -490,6 +560,8 @@ class App {
             loc.qty * loc.unit_cost,
             loc.decision_support.recommendation,
             loc.decision_support.priority_score,
+            loc.decision_support.estimated_transfer_cost,
+            loc.decision_support.expected_penalty_cost_if_wait,
           );
 
           newItem._pushDC(newDCLoc);

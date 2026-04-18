@@ -52,12 +52,6 @@
               >Distribution Center Map</a
             >
           </li>
-          <li><a class="main-nav-link" href="#meals">Meals</a></li>
-          <li>
-            <a class="main-nav-link" href="#testimonials">Testimonials</a>
-          </li>
-          <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
-          <li><a class="main-nav-link nav-cta" href="#cta">Try for free</a></li>
         </ul>
       </nav>
     </header>
@@ -121,8 +115,11 @@
       <section class="dashboard-view">
         <div class="container same-line">
           <div class="view-btn-holder">
-            <button class="overview-btn overview-btn-active">
+            <button class="overview-btn overview-btn-active overview-btn-over">
               <p class="overview-text">Overview</p>
+            </button>
+            <button class="overview-btn overview-btn-det">
+              <p class="overview-text">Details</p>
             </button>
           </div>
           <div class="sort-by">
@@ -156,108 +153,111 @@
             </ul>
           </div>
         </div>
-        <div class="item-section container">
-          <div class="item" data-sku="134">
-            <div class="item-header">
-              <h3 class="SKU-text">SKU: A-61012</h3>
-              <div class="item-status">
-                <ion-icon
-                  class="icon healthy-icon"
-                  name="checkbox-outline"
-                ></ion-icon>
-                <h5 class="status-text">No action needed</h5>
+        <div class="secion-it-hol container">
+          <div class="item-section container">
+            <div class="item" data-sku="134">
+              <div class="item-header">
+                <h3 class="SKU-text">SKU: A-61012</h3>
+                <div class="item-status">
+                  <ion-icon
+                    class="icon healthy-icon"
+                    name="checkbox-outline"
+                  ></ion-icon>
+                  <h5 class="status-text">No action needed</h5>
+                </div>
+              </div>
+              <p class="network-text">Total Network Value: $416,215.77</p>
+              <div class="dc-container">
+                <div class="dc-inf-container grid grid--col-3">
+                  <div class="dc" data-id="1">
+                    <div class="dc-header">
+                      <p class="dc-name">DC1</p>
+                    </div>
+                    <div class="network-val"></div>
+                    <div class="information">
+                      <p class="qty inf-text">Qty: 41,417</p>
+                      <p class="cost inf-text">Cost: $3.43</p>
+                      <p class="risk inf-text">Risk: $0.00</p>
+                    </div>
+                  </div>
+                  <div class="dc" data-id="2">
+                    <div class="dc-header">
+                      <p class="dc-name">DC2</p>
+                    </div>
+                    <div class="network-val"></div>
+                    <div class="information">
+                      <p class="qty inf-text">Qty: 41,417</p>
+                      <p class="cost inf-text">Cost: $3.43</p>
+                      <p class="risk inf-text">Risk: $0.00</p>
+                    </div>
+                  </div>
+                  <div class="dc dc-risk" data-id="3">
+                    <div class="dc-header">
+                      <p class="dc-name">DC3</p>
+                    </div>
+                    <div class="network-val"></div>
+                    <div class="information">
+                      <p class="qty inf-text">Qty: 41,417</p>
+                      <p class="cost inf-text">Cost: $3.43</p>
+                      <p class="total-value inf-text">Value: $427142.33</p>
+                      <p class="risk inf-text">Risk: $500.00</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <p class="network-text">Total Network Value: $416,215.77</p>
-            <div class="dc-container">
-              <div class="dc-inf-container grid grid--col-3">
-                <div class="dc" data-id="1">
-                  <div class="dc-header">
-                    <p class="dc-name">DC1</p>
-                  </div>
-                  <div class="network-val"></div>
-                  <div class="information">
-                    <p class="qty inf-text">Qty: 41,417</p>
-                    <p class="cost inf-text">Cost: $3.43</p>
-                    <p class="risk inf-text">Risk: $0.00</p>
-                  </div>
+            <div class="item" data-sku="134">
+              <div class="item-header">
+                <h3 class="SKU-text">SKU: A-61012</h3>
+                <div class="item-status">
+                  <ion-icon
+                    class="icon warning-icon-"
+                    name="warning-outline"
+                  ></ion-icon>
+                  <h5 class="status-text">Action needed</h5>
                 </div>
-                <div class="dc" data-id="2">
-                  <div class="dc-header">
-                    <p class="dc-name">DC2</p>
+              </div>
+              <p class="network-text">Total Network Value: $416,215.77</p>
+              <div class="dc-container">
+                <div class="dc-inf-container grid grid--col-3">
+                  <div class="dc" data-id="1">
+                    <div class="dc-header">
+                      <p class="dc-name">DC1</p>
+                    </div>
+                    <div class="network-val"></div>
+                    <div class="information">
+                      <p class="qty inf-text">Qty: 41,417</p>
+                      <p class="cost inf-text">Cost: $3.43</p>
+                      <p class="risk inf-text">Risk: $0.00</p>
+                    </div>
                   </div>
-                  <div class="network-val"></div>
-                  <div class="information">
-                    <p class="qty inf-text">Qty: 41,417</p>
-                    <p class="cost inf-text">Cost: $3.43</p>
-                    <p class="risk inf-text">Risk: $0.00</p>
+                  <div class="dc" data-id="2">
+                    <div class="dc-header">
+                      <p class="dc-name">DC2</p>
+                    </div>
+                    <div class="network-val"></div>
+                    <div class="information">
+                      <p class="qty inf-text">Qty: 41,417</p>
+                      <p class="cost inf-text">Cost: $3.43</p>
+                      <p class="risk inf-text">Risk: $0.00</p>
+                    </div>
                   </div>
-                </div>
-                <div class="dc dc-risk" data-id="3">
-                  <div class="dc-header">
-                    <p class="dc-name">DC3</p>
-                  </div>
-                  <div class="network-val"></div>
-                  <div class="information">
-                    <p class="qty inf-text">Qty: 41,417</p>
-                    <p class="cost inf-text">Cost: $3.43</p>
-                    <p class="total-value inf-text">Value: $427142.33</p>
-                    <p class="risk inf-text">Risk: $500.00</p>
+                  <div class="dc dc-risk" data-id="3">
+                    <div class="dc-header">
+                      <p class="dc-name">DC3</p>
+                    </div>
+                    <div class="network-val"></div>
+                    <div class="information">
+                      <p class="qty inf-text">Qty: 41,417</p>
+                      <p class="cost inf-text">Cost: $3.43</p>
+                      <p class="risk inf-text">Risk: $500.00</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item" data-sku="134">
-            <div class="item-header">
-              <h3 class="SKU-text">SKU: A-61012</h3>
-              <div class="item-status">
-                <ion-icon
-                  class="icon warning-icon-"
-                  name="warning-outline"
-                ></ion-icon>
-                <h5 class="status-text">Action needed</h5>
-              </div>
-            </div>
-            <p class="network-text">Total Network Value: $416,215.77</p>
-            <div class="dc-container">
-              <div class="dc-inf-container grid grid--col-3">
-                <div class="dc" data-id="1">
-                  <div class="dc-header">
-                    <p class="dc-name">DC1</p>
-                  </div>
-                  <div class="network-val"></div>
-                  <div class="information">
-                    <p class="qty inf-text">Qty: 41,417</p>
-                    <p class="cost inf-text">Cost: $3.43</p>
-                    <p class="risk inf-text">Risk: $0.00</p>
-                  </div>
-                </div>
-                <div class="dc" data-id="2">
-                  <div class="dc-header">
-                    <p class="dc-name">DC2</p>
-                  </div>
-                  <div class="network-val"></div>
-                  <div class="information">
-                    <p class="qty inf-text">Qty: 41,417</p>
-                    <p class="cost inf-text">Cost: $3.43</p>
-                    <p class="risk inf-text">Risk: $0.00</p>
-                  </div>
-                </div>
-                <div class="dc dc-risk" data-id="3">
-                  <div class="dc-header">
-                    <p class="dc-name">DC3</p>
-                  </div>
-                  <div class="network-val"></div>
-                  <div class="information">
-                    <p class="qty inf-text">Qty: 41,417</p>
-                    <p class="cost inf-text">Cost: $3.43</p>
-                    <p class="risk inf-text">Risk: $500.00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="item-section-details container hidden-sec"></div>
         </div>
       </section>
     </main>
