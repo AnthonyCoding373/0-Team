@@ -2,6 +2,7 @@
 
 // const buttons = document.querySelectorAll(".dashboard--button");
 const buttonContainer = document.querySelector(".dashboard--info-container");
+const dcContainer = document.querySelector(".item-section");
 
 // buttonContainer.addEventListener("click", function (e) {
 //   const targetButton = e.target;
@@ -11,10 +12,10 @@ const buttonContainer = document.querySelector(".dashboard--info-container");
 //   }
 // });
 
-// <div class="item" data-sku="${this.sku_id}">
-//         <div class="item-header">
+// <div class="" data-sku="${this.sku_id}">
+//         <div class="-header">
 //           <h3 class="SKU-text">SKU: ${this.sku_id}</h3>
-//           <div class="item-status">
+//           <div class="-status">
 //             <ion-icon
 //               class="icon ${risk > 0 ? "warning-icon-" : "healthy-icon"} "
 //               name="checkbox-outline"
@@ -39,15 +40,15 @@ class dcInf {
 
   _getHTMLContent() {
     let html = `
-        <div class="dc" data-id="${this.dc_id} data-sku${this.sku_id}">
+        <div class="dc" data-id${this.sku_id}">
           <div class="dc-header">
-            <p class="dc-name">${this.dc_id}</p>
+            <p class="dc-name">${locations[this.dc_id]}</p>
           </div>
           <div class="information">
             <p class="qty inf-text">Qty: ${this.quantity}</p>
-            <p class="cost inf-text">Cost: $${this.cost}</p>
-            <p class="total-value inf-text">Value: $${numberWithCommas(this.total_value)}</p>
-            <p class="risk inf-text">Risk: $${this.risk}</p>
+            <p class="cost inf-text">Cost: $${this.cost.toFixed(2)}</p>
+            <p class="total-value inf-text">Value: $${this.total_value.toFixed(2)}</p>
+            <p class="risk inf-text">Risk: $${this.risk.toFixed(2)}</p>
           </div>
         </div>
     `;
@@ -55,45 +56,91 @@ class dcInf {
   }
 }
 
-class item {
-  #dcInfItems;
-  constructor(sku_id, networkValue, dcInfItems) {
+class Item {
+  #dcInfs;
+  constructor(sku_id, networkValue) {
     this.sku_id = sku_id;
     this.networkValue = networkValue;
-    this.dcInfItems = dcInfItems;
+    this.#dcInfs = [];
+
+    // this._create();
   }
 
-  _getHTMLContent() {
+  _pushDC(dcInf) {
+    this.#dcInfs.push(dcInf);
+  }
+
+  _getDCString() {
+    let html = "";
+
+    this.#dcInfs.forEach((dc) => {
+      // console.log(dc);
+      // console.log(dc._getHTMLContent());
+      html += dc._getHTMLContent();
+    });
+
+    // console.log(html);
+    return html;
+  }
+
+  _getItemStatus() {
     let html = `
-      <div class="item" data-sku="134">
-        <div class="item-header">
-          <h3 class="SKU-text">SKU: A-61012</h3>
-          <div class="item-status">
-            <ion-icon
-              class="icon healthy-icon"
-              name="checkbox-outline"
-            ></ion-icon>
-            <h5 class="status-text">No action needed</h5>
-          </div>
-        </div>
-        <p class="network-text">Total Network Value: $416,215.77</p>
-        <div class="dc-container">
-          <div class="dc-inf-container grid grid--col-3">
-          </div>
-        </div>
-      </div>
+    
+    <div class="item-status">
+      <ion-icon
+        class="icon healthy-icon"
+        name="checkbox-outline"
+      ></ion-icon>
+      <h5 class="status-text">No action needed</h5>
+    </div>
+    
     `;
 
     return html;
   }
 
-  _createItem(dcINf) {
-    const itemSKU = document.querySelector(`.item[data-sku=${this.sku_id}]`);
-    this.itemSKU = itemSKU;
+  _getHTMLContent() {
+    let html = `
+        <div class="item" data-id="${this.sku_id}">
+            <div class="item-header">
+              <h3 class="SKU-text">SKU: ${this.sku_id}</h3>
+              ${this._getItemStatus()}
+            </div>
+            <p class="network-text">Total Network Value: $${this.networkValue.toFixed(2)}</p>
+            <div class="dc-container">
+              <div class="dc-inf-container grid grid--col-3">
+                ${this._getDCString()}
+              </div>
+            </div>
+            `;
+    // <div class="dc" data-id="${this.sku_id}">
+    //   <div class="-header">
+    //     <h3 class="SKU-text">SKU: ${this.sku_id}</h3>
+    //     <div class="-status">
+    //       <ion-icon
+    //         class="icon healthy-icon"
+    //         name="checkbox-outline"
+    //       ></ion-icon>
+    //       <h5 class="status-text">No action needed</h5>
+    //     </div>
+    //   </div>
+    //   <p class="network-text">Total Network Value: $${this.networkValue}</p>
+    //   <div class="dc-container">
+    //     <div class="dc-inf-container grid grid--col-3">
+    //     ${this._getDCString()}
+    //     </div>
+    //   </div>
+    // </div>
 
-    this.items = itemSKU.querySelector("dc-inf-container");
+    // console.log(html);
 
-    this.items.insertAdjacentHTML("afterbegin", dcINf._getHTMLContent());
+    return html;
+  }
+
+  _create(dcINf) {
+    // console.log(dcINf._getHTMLContent());
+    // const SKU = document.querySelector(`.item[data-id="${this.sku_id}"]`)
+    dcContainer.insertAdjacentHTML("afterbegin", dcINf._getHTMLContent());
   }
 }
 
@@ -133,9 +180,12 @@ class DC {
   }
 }
 
+const locations = ["LA", "OKL", "TE"];
+
 class App {
   #map;
   #DCs;
+  #items = [];
 
   constructor(...DCS) {
     this.#DCs = [...DCS];
@@ -173,12 +223,147 @@ class App {
     return HTML;
   }
 
-  // _readData() {
-  //   try {
+  async _readData() {
+    try {
+      const response = await fetch(
+        "./Json/enhanced_per_sku_inventory_with_trends.json",
+      );
 
-  //   }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      data.forEach((d) => {
+        const skuID = d.sku;
+        const networkValue = d.total_network_value;
+        const newItem = new Item(skuID, networkValue);
+        const locations = d.locations;
+
+        const maxSize = locations.length;
+
+        locations.forEach((loc, i) => {
+          if (i >= maxSize) return;
+
+          const newDCLoc = new dcInf(
+            skuID,
+            i,
+            loc.qty,
+            loc.unit_cost,
+            loc.penalty_risk_estimate,
+            loc.unit_cost * loc.qty,
+          );
+          newItem._pushDC(newDCLoc);
+          // console.log(newDCLoc);
+        });
+
+        this.#items.push(newItem);
+
+        newItem._create(newItem);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  _rendorItems() {
+    this.#items.forEach((item) => {
+      dcContainer.insertAdjacentHTML("afterbegin", item._getHTMLContent());
+    });
+  }
+
+  // async function startDashboard() {
+  //     const container = document.getElementById('output');
+  //
+  //     try {
+  //         // Fetch the JSON created by Python
+  //         const response = await fetch('./js/inventory_summary.json');
+  //
+  //         if (!response.ok) throw new Error("Could not find the JSON file.");
+  //
+  //         const data = await response.json();
+  //
+  //         // Simple test: Create a list of the s
+  //
+  //
+  //
+  //         // let html = "<ul>";
+  //         // data.forEach( => {
+  //         //     html += `<li>SKU: ${.SKU} | Qty: ${.Total_Qty} at DC: ${.DC_ID}</li>`;
+  //         // });
+  //         // html += "</ul>";
+  //
+  //         container.innerHTML = html;
+  //
+  //     } catch (err) {
+  //         container.innerHTML = `<p style="color:red">Error: ${err.message}</p>`;
+  //         console.error(err);
+  //     }
   // }
-  // test
+  //
+  //
+  // startDashboard();
+  // async function loadDashboard() {
+  //     const container = document.getElementById('output');
+
+  //     try {
+  //         const response = await fetch('./js/per_sku_inventory.json');
+  //         const inventoryData = await response.json();
+
+  //         let html = "<h2>Inventory Risk Dashboard</h2>";
+
+  //         inventoryData.forEach(sku => {
+  //             let dcDetailsHtml = "";
+  //             let skuHasRisk = false;
+
+  //             // Loop through each location for this specific SKU
+  //             sku.locations.forEach(loc => {
+  //                 // Logic: Value at Risk only exists if qty is 0 or less
+  //                 let valueAtRisk = 0;
+  //                 if (loc.qty <= 0) {
+  //                     // Use Math.abs to turn negative numbers positive for the calculation
+  //                     valueAtRisk = Math.abs(loc.qty) * loc.unit_cost;
+  //                     skuHasRisk = true;
+  //                 }
+
+  //                 dcDetailsHtml += `
+  //                     <div style="flex: 1; border: 1px solid #eee; padding: 10px; border-radius: 4px; background: ${valueAtRisk > 0 ? '#fff0f0' : '#f0fff0'}">
+  //                         <strong>DC ${loc.location}</strong><br>
+  //                         Qty: ${loc.qty.toLocaleString()}<br>
+  //                         Cost: $${loc.unit_cost.toFixed(2)}<br>
+  //                         <span style="color: red; font-weight: bold;">
+  //                             Risk: $${valueAtRisk.toLocaleString(undefined, {minimumFractionDigits: 2})}
+  //                         </span>
+  //                     </div>
+  //                 `;
+  //             });
+
+  //             // Build the main SKU Card
+  //             html += `
+  //                 <div class="sku-card" style="border: 2px solid ${skuHasRisk ? 'red' : '#ccc'}; padding: 20px; margin-bottom: 20px; border-radius: 10px; font-family: sans-serif;">
+  //                     <div style="display: flex; justify-content: space-between;">
+  //                         <h3>SKU: ${sku.sku}</h3>
+  //                         <h3 style="color: ${skuHasRisk ? 'red' : 'green'}">${skuHasRisk ? '🚨 ACTION REQUIRED' : '✅ HEALTHY'}</h3>
+  //                     </div>
+  //                     <p>Total Network Value: $${sku.total_network_value.toLocaleString()}</p>
+  //                     <div style="display: flex; gap: 10px;">
+  //                         ${dcDetailsHtml}
+  //                     </div>
+  //                 </div>
+  //             `;
+  //         });
+
+  //         container.innerHTML = html;
+
+  //     } catch (error) {
+  //         console.error("Error loading dashboard:", error);
+  //         container.innerHTML = "Error loading inventory data.";
+  //     }
+  // }
+
+  // loadDashboard();
 
   _rendorMapMarkers(dc) {
     const popUpObject = L.popup({
@@ -263,7 +448,7 @@ class App {
       },
     });
 
-    console.log("open");
+    // console.log("open");
 
     // workout.click();
   }
