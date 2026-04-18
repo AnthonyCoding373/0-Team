@@ -358,14 +358,19 @@ class App {
     // this.estimated_transfer_cost = estimated_transfer_cost;
     // this.expected_penalty_cost_if_wait = expected_penalty_cost_if_wait;
 
+    const rec =
+      dcItem.recommended_action == "transfer_now"
+        ? "New Transfers Needed"
+        : "Inbound Transfer is Sufficient";
+
     let html = `
     
       <div class="item-section container">
         <div class="item details-back" data-sku="134">
           <div class="item-header cust">
-            <h3 class="SKU-text">${locations[dataInd]}<span class="SKU-text-form">&middot; SKU: ${dataId}</span></h3>
+            <h3 class="SKU-text">${locations[dataInd]}<span class="SKU-text-form "> &middot; SKU: ${dataId}</span></h3>
             <div class="item-status">
-              <h5 class="status-text recom">Recommended: ${dcItem.recommended_action}</h5>
+              <h5 class="status-text recom ${dcItem.recommended_action == "transfer_now" ? "red" : ""}">${rec}</h5>
             </div>
           </div>
           <p class="network-text expec">Expected Penalty with No Action: <span class="total">$${dcItem.expected_penalty_cost_if_wait}</span></p>

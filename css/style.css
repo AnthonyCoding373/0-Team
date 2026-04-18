@@ -320,6 +320,10 @@ icon--none-severe */
   font-weight: 600;
 }
 
+.red {
+  color: red;
+}
+
 .network-text {
   font-size: 2.4rem;
   color: #555;
