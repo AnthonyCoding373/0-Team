@@ -74,7 +74,7 @@ header {
       rgba(139, 139, 139, 0.4),
       rgba(255, 255, 255, 0.7)
     ),
-    url("/WebsiteImage.webp");
+    url("../WebsiteImage.webp");
   /* background-image:
     linear-gradient(
       to bottom,
