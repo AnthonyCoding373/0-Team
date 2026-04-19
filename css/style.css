@@ -30,6 +30,7 @@
 }
 
 .section-intro {
+  margin-top: 3rem !important;
   position: relative;
 }
 
@@ -333,7 +334,7 @@ icon--medium */
 
 .overview-text {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .item-section-details {
