@@ -27,11 +27,17 @@ html {
   overflow-x: hidden;
 }
 
+main {
+  margin: 0;
+}
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
+  padding: 0;
+  margin: 0;
 
   overflow-x: hidden;
 }
@@ -62,12 +68,16 @@ body {
 .main-nav-link:link,
 .main-nav-link:visited {
   text-decoration: none;
-  color: #555;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+  display: inline-block;
+  /* background-color: #fff !important; */
 }
 
 .main-nav-link:hover,
 .main-nav-link:active {
-  text-decoration: none;
   color: #aaa;
 }
 
